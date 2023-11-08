@@ -1,0 +1,16 @@
+{{ define "head" }}
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/home.css">
+{{ end }}
+{{ define "body" }}
+  <div style="background: black; color: white">
+    <nav id="barra-de-navegación">
+      <ul>
+        <li>El evento</li>
+        <li>Obras</li>
+        <li>Contacto</li>
+      </ul>
+    </nav>
+    {{ partial "home/header.html" . }}
+  </div>
+  {{ partial "home/obras.html" . }}
+{{ end }}
