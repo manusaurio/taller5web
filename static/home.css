@@ -1,0 +1,7 @@
+#barra-de-navegación {
+  text-align: center;
+}
+
+#barra-de-navegación ul > li {
+  display: inline;
+}

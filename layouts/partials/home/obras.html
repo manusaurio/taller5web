@@ -1,0 +1,9 @@
+<main>
+  <h2>Obras:</h2>
+  {{ range where .Site.RegularPages.ByDate "Type" "obra" }}
+  <div>
+    <a href="{{ .Permalink }}"><h3>{{ .Title }}</h3></a>
+    {{ .Description }}
+  </div>
+  {{ end }}
+</main>
