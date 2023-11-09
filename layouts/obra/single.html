@@ -1,0 +1,8 @@
+{{ define "head" }}
+<link rel="stylesheet" href="{{ .Site.BaseURL }}/obra.css">
+{{ end }}
+{{ define "body" }}
+{{ partial "obra/encabezado" . }}
+{{ partial "obra/obra-e-investigacion" . }}
+{{ partial "obra/navegacion" . }}
+{{ end }}
