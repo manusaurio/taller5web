@@ -1,0 +1,72 @@
+.obra-investigacion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+  align-content: stretch;
+  width: 98%;
+  max-width: 1070px;
+  margin: 0 auto;
+  gap: 10px;
+  text-align: justify;
+}
+
+.obra-investigacion > p {
+  margin-top: -10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.obra-investigacion > h3 {
+  padding-left: 10px;
+}
+
+.obra-investigacion-video {
+  aspect-ratio: 16 / 9;
+}
+
+.obra-investigacion img {
+  min-width: 50%;
+  object-fit: contain;
+  align-self: flex-start;
+}
+
+.obra-investigacion-bloque {
+  display: flex;
+}
+
+.obra-investigacion-bloque-texto {
+  padding: 1em;
+  flex-grow: 1;
+}
+
+.obra-investigacion h3 {
+  font-size: 1.5em;
+  padding-bottoM: 0.5em;
+}
+
+.obra-investigacion-bloque-texto p:not(:last-child) {
+  padding-bottom: 10px;
+}
+
+.obra-investigacion-bloque:nth-of-type(2n) {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 720px) {
+  .obra-investigacion {
+    width: 100%;
+  }
+
+  .obra-investigacion-bloque-texto {
+    padding: 0.5em;
+  }
+
+  .obra-investigacion img {
+    width: 100%;
+  }
+
+  .obra-investigacion-bloque,
+  .obra-investigacion-bloque:nth-of-type(2n) {
+    flex-direction: column;
+  }
+}
