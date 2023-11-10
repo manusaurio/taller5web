@@ -5,6 +5,45 @@
   font-weight: normal;
 }
 
+@font-face {
+  font-family: 'DCC Ash';
+  src: url('http://localhost:1313/artimanias/2023/dcc-ash.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('Inter-VariableFont_slnt,wght.ttf') format('truetype');
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'DCC Ash';
+}
+
+h1 {
+  font-size: 5em;
+}
+
+h2 {
+  font-size: 4em;
+}
+
+h3 {
+  font-size: 3.5em;
+}
+
+h4 {
+  font-size: 3em;
+}
+
+h5 {
+  font-size: 2.5em;
+}
+
+a:link, a:visited, a:hover, a:active {
+  all: unset;
+  cursor: pointer;
+}
+
 strong {
   font-weight: bold;
 }
@@ -13,6 +52,9 @@ body {
   display: flex;
   flex-flow: column nowrap;
   min-height: 100vh;
+  background-image: url('fondo-papel.webp');
+  background-position: 0 900px;
+  font-family: 'Inter', sans-serif;
 }
 
 main {
