@@ -34,6 +34,11 @@ h5 {
   font-size: 2.5em;
 }
 
+a:link, a:visited, a:hover, a:active {
+  all: unset;
+  cursor: pointer;
+}
+
 strong {
   font-weight: bold;
 }
