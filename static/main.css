@@ -48,6 +48,10 @@ a:link, a:visited, a:hover, a:active {
   cursor: pointer;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 strong {
   font-weight: bold;
 }
