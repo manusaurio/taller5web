@@ -1,5 +1,5 @@
 <div class="obra-investigacion-bloque">
-  <img src="{{ .Get "imagen" }}">
+  <img src="{{ .Get "imagen" }}" alt="{{ .Get "alt" }}">
   <div class="obra-investigacion-bloque-texto">
     {{ .Inner | markdownify }}
   </div>
