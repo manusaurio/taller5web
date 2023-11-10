@@ -13,6 +13,8 @@ body {
   display: flex;
   flex-flow: column nowrap;
   min-height: 100vh;
+  background-image: url('fondo-papel.webp');
+  background-position: 0 900px;
 }
 
 main {
