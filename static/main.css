@@ -10,6 +10,11 @@
   src: url('http://localhost:1313/artimanias/2023/dcc-ash.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('Inter-VariableFont_slnt,wght.ttf') format('truetype');
+}
+
 h1, h2, h3, h4, h5 {
   font-family: 'DCC Ash';
 }
@@ -49,6 +54,7 @@ body {
   min-height: 100vh;
   background-image: url('fondo-papel.webp');
   background-position: 0 900px;
+  font-family: 'Inter', sans-serif;
 }
 
 main {
