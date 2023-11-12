@@ -35,8 +35,8 @@
         </div>
       </div>
 
-      {{ if fileExists (printf "%s/investigación.jpg" .File.Dir) }}
-      <img src="investigación.jpg" alt="{{ default "Foto de investigación" .Params.researchImgAlt }}">
+      {{ with .Resources.GetMatch "investigación.*" }}
+      <img src="{{ .Permalink }}" alt="{{ default "Foto de investigación" .Params.researchImgAlt }}">
       {{ end }}
 
     </div>
