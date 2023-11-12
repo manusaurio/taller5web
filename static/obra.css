@@ -12,45 +12,49 @@
   flex-direction: column;
   justify-content: center
   align-content: stretch;
-  width: 98%;
+  width: 100%;
   max-width: 1322px;
+  padding-left: var(--obra-padding);
+  padding-right: var(--obra-padding);
+  box-sizing: border-box;
   margin: 0 auto;
+
   gap: var(--obra-gap);
   text-align: justify;
-}
 
-.obra-investigacion > p {
-  margin-top: calc(var(--obra-gap) * -1);
-}
+  > p {
+    margin-top: calc(var(--obra-gap) * -1);
+  }
 
-.obra-investigacion-video {
-  aspect-ratio: 16 / 9;
+  h3 {
+    font-size: 2.8em;
+    text-transform: uppercase;
+    padding-bottom: .5rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .obra-investigacion-video {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 .obra-investigacion-bloque {
   display: flex;
   column-gap: var(--obra-bloque-gap);
-}
 
-.obra-investigacion-bloque > img {
-  min-width: calc(50% - var(--obra-bloque-gap) / 2);
-  object-fit: contain;
-  align-self: flex-start;
-}
+  > img {
+    min-width: calc(50% - var(--obra-bloque-gap) / 2);
+    object-fit: contain;
+    align-self: flex-start;
+  }
 
-.obra-investigacion-bloque-texto {
-  padding-top: 1em;
-}
+  .obra-investigacion-bloque-texto {
+    padding-top: 16px;
 
-.obra-investigacion h3 {
-  font-size: 2.8em;
-  text-transform: uppercase;
-  padding-bottom: .5rem;
-  letter-spacing : 0.2rem;
-}
-
-.obra-investigacion-bloque-texto p:not(:last-child) {
-  padding-bottom: 10px;
+    p:not(:last-of-type) {
+      margin-bottom: var(--obra-gap);
+    }
+  }
 }
 
 .obra-investigacion-bloque:nth-of-type(2n) {
@@ -60,32 +64,15 @@
 @media (max-width: 720px) {
   .obra-investigacion {
     width: 100%;
-  }
 
-  .obra-investigacion-bloque-texto {
-    padding: calc(var(--obra-bloque-gap) / 2);
-  }
+    img {
+      width: 100%;
+    }
 
-  .obra-investigacion img {
-    width: 100%;
-  }
-
-  .obra-investigacion-bloque,
-  .obra-investigacion-bloque:nth-of-type(2n) {
-    flex-direction: column;
-  }
-
-  /* El resto del contenido de Hugo es volcado /
-  / directamente como elementos no agrupados /
-  / entre sí. Aplicamos el padding: */
-  .obra-investigacion > h3 {
-    padding-left: var(--obra-padding);
-    padding-right: var(--obra-padding);
-  }
-
-  .obra-investigacion > p {
-    padding-left: var(--obra-padding);
-    padding-right: var(--obra-padding);
+    .obra-investigacion-bloque,
+    .obra-investigacion-bloque:nth-of-type(2n) {
+      flex-direction: column;
+    }
   }
 }
 
@@ -95,106 +82,106 @@
   /* se asume que la imagen tiene 1/4 de ancho que el del divisor */
   background-size: 25%;
   color: white;
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 30px;
-}
 
-.investigación-contenido {
-  padding-left: calc(var(--obra-padding) * 4);
-  padding-right: calc(var(--obra-padding) * 4);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em 60px;
-  justify-content: center;
-  max-width: 1600px;
-  margin: 0 auto;
-}
+  .investigación-contenido {
+    padding-left: calc(var(--obra-padding) * 4);
+    padding-right: calc(var(--obra-padding) * 4);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em 60px;
+    justify-content: center;
+    max-width: 1600px;
+    margin: 0 auto;
 
-.investigación-contenido > img {
-  flex: 1;
-  display: block;
-  align-self: flex-start;
-  max-width: 100%;
-}
+    > img {
+      flex: 1;
+      display: block;
+      align-self: flex-start;
+      max-width: 100%;
+    }
 
-.investigación-texto {
-  flex: 1;
-  text-align: justify;
-  align-self: center;
-}
+    .investigación-texto {
+      flex: 1;
+      text-align: justify;
+      align-self: center;
 
-.investigación-texto h3 {
-  text-transform: uppercase;
-  padding-bottom: 5px;
-}
+      h3 {
+        text-transform: uppercase;
+        padding-bottom: 5px;
+      }
 
-.investigación-texto button {
-  margin-top: 16px;
-  display: block;
-  border: none;
-  padding: .8em;
-  font-weight: bold;
-  text-transform: uppercase;
-}
+      button {
+        margin-top: 16px;
+        display: block;
+        border: none;
+        padding: .8em;
+        font-weight: bold;
+        text-transform: uppercase;
 
-.investigación-texto > wrapper {
-  padding-top: 10px;
-}
+        :hover {
+          background-color: silver;
+        }
 
-.investigación-texto button:hover {
-  background-color: silver;
-}
+        :active {
+          background-color: darkgray;
+        }
+      }
 
-.investigación-texto button:active {
-  background-color: darkgray;
+      > wrapper {
+        padding-top: 10px;
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .investigación-contenido {
+      flex-flow: column;
+
+      > img {
+        min-width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 1322px) {
+    /* 1322 -> ancho de .obra-investigacion */
+    .investigación-contenido {
+      padding-left: var(--obra-padding);
+      padding-right: var(--obra-padding);
+      gap: 1em 30px;
+
+      h3 {
+        word-break: break-all;
+      }
+    }
+  }
 }
 
 .obra-investigación-división {
   position: relative;
-}
 
-.obra-investigación-división > img {
-  display: block;
-  width: 100%;
-  margin-top: 100px;
-}
+   > img {
+     display: block;
+     width: 100%;
+     margin-top: 100px;
+   }
 
-.obra-investigación-división button {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  padding: 10px; border: none;
-  background-color: #faef7d;
-}
+   button {
+     width: 100px;
+     height: 100px;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     border-radius: 50%;
+     padding: 10px; border: none;
+     background-color: #faef7d;
 
-.obra-investigación-división button > svg {
-  fill: #3300ff;
-  scale: 0.7;
-}
-
-@media (max-width: 1000px) {
-  .investigación-contenido {
-    flex-flow: column;
-  }
-
-  .investigación-contenido > img {
-    min-width: 100%;
-  }
-}
-
-@media (max-width: 1322px) {
-  /* 1322 -> ancho de .obra-investigacion */
-  .investigación-contenido {
-    padding-left: var(--obra-padding);
-    padding-right: var(--obra-padding);
-    gap: 1em 30px;
-  }
-
-  .investigación-texto h3 {
-    word-break: break-all;
-  }
+      > svg {
+        fill: #3300ff;
+        scale: 0.7;
+      }
+   }
 }
