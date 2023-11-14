@@ -5,7 +5,6 @@ title: 'La Gioconda'
 category: 'pintura'
 artist: 'Paula Paulina Paulis'
 video: 'yRK_uCMwZPY'
-research: 'https://scholar.google.com/'
 researchImgAlt: 'La pintura en cuestión, en exposición en el Louvre.'
 description: 'Esta es una muy breve descripción de la obra de Paulita.'
 ---

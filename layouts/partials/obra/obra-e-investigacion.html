@@ -28,14 +28,17 @@
         <h3>Investigación</h3>
         {{ $archivoInv := printf "%s/investigación.md" .File.Dir }}
         {{ readFile $archivoInv | markdownify }}
+
+        {{ with .Resources.GetMatch "*.pdf" }}
         <div class="wrapper">
-          <a href="{{ .Params.research }}" target="_blank" rel="noopener noreferrer">
+          <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer">
             <button>Ver investigación</button>
           </a>
         </div>
+        {{ end }}
       </div>
 
-      {{ with .Resources.GetMatch "investigación.*" }}
+      {{ with .Resources.GetMatch "investigación-foto.*" }}
       <img src="{{ .Permalink }}" alt="{{ default "Foto de investigación" .Params.researchImgAlt }}">
       {{ end }}
 
