@@ -1,7 +1,6 @@
 .obra-main {
   --obra-gap: 30px;
   --obra-bloque-gap: 16px;
-  --obra-padding: 10px;
   display: flex;
   flex-flow: column wrap;
 }
@@ -14,8 +13,8 @@
   align-content: stretch;
   width: 100%;
   max-width: 1322px;
-  padding-left: var(--obra-padding);
-  padding-right: var(--obra-padding);
+  padding-left: var(--min-padding);
+  padding-right: var(--min-padding);
   box-sizing: border-box;
   margin: 0 auto;
 
@@ -86,8 +85,8 @@
   padding-bottom: 30px;
 
   .investigación-contenido {
-    padding-left: calc(var(--obra-padding) * 4);
-    padding-right: calc(var(--obra-padding) * 4);
+    padding-left: calc(var(--min-padding) * 4);
+    padding-right: calc(var(--min-padding) * 4);
     display: flex;
     flex-wrap: wrap;
     gap: 1em 60px;
@@ -112,25 +111,8 @@
         padding-bottom: 5px;
       }
 
-      button {
-        margin-top: 16px;
-        display: block;
-        border: none;
-        padding: .8em;
-        font-weight: bold;
-        text-transform: uppercase;
-
-        :hover {
-          background-color: silver;
-        }
-
-        :active {
-          background-color: darkgray;
-        }
-      }
-
-      > wrapper {
-        padding-top: 10px;
+      > .button-wrapper {
+        margin-top: 10px;
       }
     }
   }
@@ -148,8 +130,8 @@
   @media (max-width: 1322px) {
     /* 1322 -> ancho de .obra-investigacion */
     .investigación-contenido {
-      padding-left: var(--obra-padding);
-      padding-right: var(--obra-padding);
+      padding-left: var(--min-padding);
+      padding-right: var(--min-padding);
       gap: 1em 30px;
 
       h3 {

@@ -30,9 +30,9 @@
         {{ readFile $archivoInv | markdownify }}
 
         {{ with .Resources.GetMatch "*.pdf" }}
-        <div class="wrapper">
+        <div class="button-wrapper">
           <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer">
-            <button>Ver investigación</button>
+            <button class="botón-estilizado">Ver investigación</button>
           </a>
         </div>
         {{ end }}
