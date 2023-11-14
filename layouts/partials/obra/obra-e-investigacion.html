@@ -7,6 +7,41 @@
   {{ end }}
 
   {{ .Content }}
+  </div>
 
+  <div class="obra-investigación-división">
+    <img draggable="false" src="{{ .Site.BaseURL }}/imgs/divisor-obra-investigación.webp" alt="división">
+
+    <a href="#top">
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <title>flecha-arriba</title>
+          <path d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z" />
+        </svg>
+      </button>
+    </a>
+  </div>
+
+  <div class="investigación">
+    <div class="investigación-contenido">
+      <div class="investigación-texto">
+        <h3>Investigación</h3>
+        {{ $archivoInv := printf "%s/investigación.md" .File.Dir }}
+        {{ readFile $archivoInv | markdownify }}
+
+        {{ with .Resources.GetMatch "*.pdf" }}
+        <div class="wrapper">
+          <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer">
+            <button>Ver investigación</button>
+          </a>
+        </div>
+        {{ end }}
+      </div>
+
+      {{ with .Resources.GetMatch "investigación-foto.*" }}
+      <img src="{{ .Permalink }}" alt="{{ default "Foto de investigación" .Params.researchImgAlt }}">
+      {{ end }}
+
+    </div>
   </div>
 </main>

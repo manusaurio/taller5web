@@ -1,13 +1,17 @@
+:root {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
-  font-size: 16px;
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'DCC Ash';
-  src: url('http://localhost:1313/artimanias/2023/dcc-ash.otf') format('opentype');
+  src: url('dcc-ash.otf') format('opentype');
 }
 
 @font-face {
@@ -44,6 +48,10 @@ a:link, a:visited, a:hover, a:active {
   cursor: pointer;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 strong {
   font-weight: bold;
 }
@@ -54,7 +62,6 @@ body {
   min-height: 100vh;
   background-image: url('fondo-papel.webp');
   background-position: 0 900px;
-  font-family: 'Inter', sans-serif;
 }
 
 main {
