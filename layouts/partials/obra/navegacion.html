@@ -9,4 +9,63 @@
 
 {{ $sig := $s.Get "sig" }}
 
-<a href="{{ $sig.Permalink }}">Ver {{ $sig.Title }}!</a>
+<!-- SVG para referenciar desde .obra-navegación-siguiente__ilustración  -->
+<svg width="0" height="0">
+  <defs>
+    <clipPath id="path" clipPathUnits="objectBoundingBox">
+        <path d='M1 0C.6 0 .4.03.3.1.27.13 0 .29 0 .39.008.574.174.598.297.69.431.782.403.824.5.9.615.997 1 1 1 1Z'></path>
+    </clipPath>
+  </defs>
+</svg>
+
+<div class="obra-navegación">
+  <div class="persona-wrapper">
+    <img class="adornoA"
+         src="{{ .Site.BaseURL }}imgs/obra-siguiente-adorno.webp">
+
+    <img class="adornoB"
+         src="{{ .Site.BaseURL }}imgs/obra-siguiente-adorno.webp">
+
+    <img class="obra-navegación__persona"
+       src="{{ .Resources.GetMatch "pfp.*" }}"
+       >
+  </div>
+
+  <a href="{{ .Site.BaseURL }}">
+    <img class="obra-navegación__volver"
+         src="{{ .Site.BaseURL }}imgs/obra-siguiente-volver.webp"
+         alt="Volver a las obras">
+
+    <img class="obra-navegación__volver-mob"
+         src="{{ .Site.BaseURL }}imgs/obra-siguiente-volver-mob.webp"
+         alt="Volver a las obras">
+  </a>
+
+  <div class="obra-navegación-siguiente">
+    <a href="{{ $sig.Permalink }}">
+      <img class="obra-navegación-siguiente__ilustración"
+           src="{{ ($sig.Resources.GetMatch "obra-pv.*").Permalink }}"
+           alt="Ilustración de {{ $sig.Title }}">
+      <img class="obra-navegación-siguiente__cinta"
+           src="{{ .Site.BaseURL }}imgs/obra-siguiente-siguiente.webp"
+           alt="Próxima obra">
+    </a>
+  </div>
+
+  <div class="obra-navegación-siguiente-mob">
+    <img class="obra-navegación-siguiente-mob__prox"
+         src="{{ .Site.BaseURL }}imgs/obra-siguiente-siguiente-mob.webp"
+         alt="Próxima obra">
+
+    <a href="{{ $sig.Permalink }}">
+      <img class="obra-navegación-siguiente-mob__sig"
+           src="{{ .Site.BaseURL }}imgs/obra-siguiente-cinta-gris.webp"
+           alt="{{ $sig.Title }}">
+
+      <div class="obra-navegación-siguiente-mob__sig-texto">
+        {{ $sig.Title }}
+      </div>
+    </a>
+
+  </div>
+</div>
