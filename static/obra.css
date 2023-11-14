@@ -161,27 +161,29 @@
 
 .obra-investigación-división {
   position: relative;
+  width: 100%;
+  margin-top: 50px;
 
-   > img {
-     display: block;
-     width: 100%;
-     margin-top: 100px;
-   }
+  img {
+    display: block;
+    width: 100%;
+  }
 
-   button {
-     width: 100px;
-     height: 100px;
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     border-radius: 50%;
-     padding: 10px; border: none;
-     background-color: #faef7d;
+  button {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    padding: 10px;
+    border: none;
+    background-color: #faef7d;
 
-      > svg {
-        fill: #3300ff;
-        scale: 0.7;
-      }
-   }
+    > svg {
+      fill: #3300ff;
+      scale: 0.7;
+    }
+  }
 }
