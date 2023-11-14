@@ -1,6 +1,9 @@
 :root {
   font-size: 16px;
   font-family: 'Inter', sans-serif;
+  --obra-gap: 30px;
+  --obra-bloque-gap: 16px;
+  --min-padding: 10px;
 }
 
 * {
@@ -50,6 +53,22 @@ a:link, a:visited, a:hover, a:active {
 
 button:hover {
   cursor: pointer;
+}
+
+.botón-estilizado {
+  display: block;
+  border: none;
+  padding: .8em;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  :hover {
+    background-color: silver;
+  }
+
+  :active {
+    background-color: darkgray;
+  }
 }
 
 strong {

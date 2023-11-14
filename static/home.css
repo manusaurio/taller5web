@@ -10,8 +10,7 @@
   display: grid;
   width: 100%;
   max-width: 1366px;
-  /* TODO: root debería tener una variable de padding para compartirla con la vista de obra */
-  padding: 10px;
+  padding: var(--min-padding);
   box-sizing: border-box;
   margin: 0 auto;
   grid-template-columns: 1fr min(65px, 5.5%) 50%;
@@ -20,15 +19,6 @@
 .descripción-evento-texto {
   box-sizing: border-box;
   text-align: justify;
-}
-
-/* TODO: combinar con el estilo de botones del layout de obra */
-button {
-  display: block;
-  border: none;
-  padding: .8em;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 .button-wrapper {
