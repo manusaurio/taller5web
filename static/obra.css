@@ -5,6 +5,7 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
+  max-height: 1080px;
   background-image: url('imgs/obra-header-trama.png'), url('imgs/obra-header-fondo.webp');
   background-position: 0 0;
   background-size: auto auto, cover;
@@ -217,6 +218,10 @@
   .obra-encabezado-contenido__bio
   .obra-encabezado-contenido__bio-encabezado {
     max-height: 40px;
+  }
+
+  .obra-encabezado-sombreado-texto {
+    font-size: 30px;
   }
 
   .obra-encabezado-contenido__bio-encabezado__cuerpo-wrapper {
