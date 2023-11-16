@@ -1,4 +1,56 @@
-<header>
-  <h2>{{ .Title }}</h2>
-  <p>Hecho por {{ .Params.artist }}</p>
+<header class="obra-encabezado">
+  <img class="obra-encabezado-artimañas"
+       src="{{ .Site.BaseURL }}imgs/obra-header-artimañas.png">
+
+  <img class="obra-encabezado-adorno-top-right"
+       src="{{ .Site.BaseURL }}imgs/obra-header-adorno-top-right.webp">
+
+  <img class="obra-encabezado-adorno-bottom-left"
+       src="{{ .Site.BaseURL }}imgs/obra-header-adorno-bottom-left.webp">
+
+  <div class="obra-encabezado-contenido">
+    <div class="obra-encabezado-contenido-wrapper">
+      <div class="obra-encabezado-contenido__título">
+        <img src="{{ .Site.BaseURL }}imgs/obra-header-cinta-obra.webp">
+        <h3>{{ .Title }}</h3>
+      </div>
+
+      <img class="obra-encabezado-contenido__foto-principal" src="encabezado-main.jpg">
+
+      <div class="obra-encabezado-contenido__bio">
+        <div class="obra-encabezado-contenido__bio-encabezado">
+          <img src="{{ .Site.BaseURL }}imgs/obra-header-cinta-artista.webp">
+          <div class="obra-encabezado-contenido__bio-encabezado-nombre">
+            {{ .Params.artist }}
+          </div>
+        </div>
+
+        <div class="obra-encabezado-sombreado-caja obra-encabezado-contenido__bio-encabezado__cuerpo-wrapper">
+          <img src="encabezado-artista.png">
+          <div>
+            {{ $artista := .Params.artist }}
+            {{ with .Resources.GetMatch "bio.md" }}
+            <h3>Sobre {{ $artista }}</h3>
+            <div>
+              {{ .Content }}
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+
+      <div class="obra-encabezado-contenido-extra">
+        {{- $palabras := split (.Params.categories) " " -}}
+        {{- $ultEspaciado := sub (len $palabras) 1  -}}
+
+        <h3 class="obra-encabezado-sombreado-texto">
+          {{- range $i, $p := $palabras -}}
+          <span>{{ $p }}{{ if lt $i $ultEspaciado }} {{ end }}</span>
+          {{- end -}}
+        </h3>
+        <img class="obra-encabezado-sombreado-caja"
+             src="encabezado-mini.jpg">
+      </div>
+    </div>
+  </div>
 </header>
