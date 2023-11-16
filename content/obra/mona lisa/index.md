@@ -1,8 +1,8 @@
 ---
 date: '2023-11-07T18:05:16-03:00'
 draft: true
-title: 'La Gioconda'
-category: 'pintura'
+title: 'Alicia a través del espejo 2d'
+categories: 'pintura loca loca'
 artist: 'Paula Paulina Paulis'
 video: 'yRK_uCMwZPY'
 researchImgAlt: 'La pintura en cuestión, en exposición en el Louvre.'
