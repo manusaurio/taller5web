@@ -46,7 +46,8 @@
     color: white;
   }
 
-  h3 span:nth-child(2n) {
+  /* TODO: se podría refactorizar toda esta cosa con los headings, but let's get this moving*/
+  h3 span:not(:first-child) {
     color: yellow;
   }
 
