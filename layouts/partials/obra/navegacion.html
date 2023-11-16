@@ -1,0 +1,12 @@
+{{ $site := .Site }}
+{{ $s := .Scratch }}
+
+{{ with .Next }}
+    {{ $s.Set "sig" . }}
+{{ else }}
+  {{ $s.Set "sig" (index $site.RegularPages.ByDate 0) }}
+{{ end }}
+
+{{ $sig := $s.Get "sig" }}
+
+<a href="{{ $sig.Permalink }}">Ver {{ $sig.Title }}!</a>
