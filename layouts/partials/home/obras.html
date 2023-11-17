@@ -1,4 +1,5 @@
-<main>
+<main id="obras">
+  <!-- necesito el id="obras" para linkear en el nav-bar de header.html -->
   <h2>Obras:</h2>
   {{ range where .Site.RegularPages.ByDate "Type" "obra" }}
   <div>
