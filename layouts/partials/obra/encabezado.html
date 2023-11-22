@@ -1,4 +1,7 @@
 <header class="obra-encabezado">
+  {{- $headerMain := .Resources.GetMatch "encabezado-main.*" -}}
+  {{- $headerMini := .Resources.GetMatch "encabezado-mini.*" -}}
+
   <img class="obra-encabezado-artimañas"
        src="{{ .Site.BaseURL }}imgs/obra-header-artimañas.png">
 
@@ -15,7 +18,10 @@
         <h3>{{ .Title }}</h3>
       </div>
 
-      <img class="obra-encabezado-contenido__foto-principal" src="encabezado-main.jpg">
+      {{- with $headerMain -}}
+      {{- $processed := .Fill "677x756 webp" -}}
+      <img class="obra-encabezado-contenido__foto-principal" src="{{ $processed.RelPermalink }}">
+      {{- end -}}
 
       <div class="obra-encabezado-contenido__bio">
         <div class="obra-encabezado-contenido__bio-encabezado">
@@ -48,8 +54,11 @@
           <span>{{ $p }}{{ if lt $i $ultEspaciado }} {{ end }}</span>
           {{- end -}}
         </h3>
+        {{- with $headerMini -}}
+        {{- $processed := .Fill "390x260 webp" -}}
         <img class="obra-encabezado-sombreado-caja"
-             src="encabezado-mini.jpg">
+             src="{{ $processed.RelPermalink }}">
+        {{- end -}}
       </div>
     </div>
   </div>
