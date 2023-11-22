@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="46"
+   height="45"
+   viewBox="0 0 46 45"
+   fill="none"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="logo-facebook-negro.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="18.4"
+     inkscape:cx="23.016304"
+     inkscape:cy="22.5"
+     inkscape:window-width="1914"
+     inkscape:window-height="1031"
+     inkscape:window-x="0"
+     inkscape:window-y="46"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     d="M45.4998 22.6378C45.4998 10.1334 35.4254 -0.00280762 22.9998 -0.00280762C10.5685 4.88271e-06 0.494141 10.1334 0.494141 22.6406C0.494141 33.9384 8.72352 43.3041 19.4785 45.0028V29.1825H13.7691V22.6406H19.4841V17.6484C19.4841 11.9756 22.8451 8.8425 27.9835 8.8425C30.4473 8.8425 33.0207 9.28407 33.0207 9.28407V14.8528H30.1829C27.3901 14.8528 26.5182 16.5994 26.5182 18.3909V22.6378H32.7563L31.7607 29.1797H26.5154V45C37.2704 43.3012 45.4998 33.9356 45.4998 22.6378Z"
+     fill="white"
+     id="path1"
+     style="fill:#000000" />
+</svg>
