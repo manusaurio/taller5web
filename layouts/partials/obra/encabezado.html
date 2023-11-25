@@ -3,18 +3,18 @@
   {{- $headerMini := .Resources.GetMatch "encabezado-mini.*" -}}
 
   <img class="obra-encabezado-artimañas"
-       src="{{ .Site.BaseURL }}imgs/obra-header-artimañas.png">
+       src="{{ relURL "imgs/obra-header-artimañas.png"}}">
 
   <img class="obra-encabezado-adorno-top-right"
-       src="{{ .Site.BaseURL }}imgs/obra-header-adorno-top-right.webp">
+       src="{{ relURL "imgs/obra-header-adorno-top-right.webp" }}">
 
   <img class="obra-encabezado-adorno-bottom-left"
-       src="{{ .Site.BaseURL }}imgs/obra-header-adorno-bottom-left.webp">
+       src="{{ relURL "imgs/obra-header-adorno-bottom-left.webp" }}">
 
   <div class="obra-encabezado-contenido">
     <div class="obra-encabezado-contenido-wrapper">
       <div class="obra-encabezado-contenido__título">
-        <img src="{{ .Site.BaseURL }}imgs/obra-header-cinta-obra.webp">
+        <img src="{{ relURL "imgs/obra-header-cinta-obra.webp" }}">
         <h3>{{ .Title }}</h3>
       </div>
 
@@ -39,7 +39,7 @@
 
       <div class="obra-encabezado-contenido__bio">
         <div class="obra-encabezado-contenido__bio-encabezado">
-          <img src="{{ .Site.BaseURL }}imgs/obra-header-cinta-artista.webp">
+          <img src="{{ relURL "imgs/obra-header-cinta-artista.webp" }}">
           <div class="obra-encabezado-contenido__bio-encabezado-nombre">
             {{ .Params.artist }}
           </div>
