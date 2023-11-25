@@ -21,48 +21,48 @@
 <div class="obra-navegación">
   <div class="persona-wrapper">
     <img class="adornoA"
-         src="{{ .Site.BaseURL }}imgs/obra-siguiente-adorno.webp">
+         src="{{ relURL "imgs/obra-siguiente-adorno.webp" }}">
 
     <img class="adornoB"
-         src="{{ .Site.BaseURL }}imgs/obra-siguiente-adorno.webp">
+         src="{{ relURL "imgs/obra-siguiente-adorno.webp" }}">
 
     <img class="obra-navegación__persona"
-       src="{{ .Resources.GetMatch "pfp.*" }}"
+       src="{{ (.Resources.GetMatch "pfp.*").RelPermalink }}"
        >
   </div>
 
-  <a href="{{ .Site.BaseURL }}">
+  <a href="{{ relURL "" }}">
     <img class="obra-navegación__volver"
-         src="{{ .Site.BaseURL }}imgs/obra-siguiente-volver.webp"
+         src="{{ relURL "imgs/obra-siguiente-volver.webp" }}"
          alt="Volver a las obras">
 
     <img class="obra-navegación__volver-mob"
-         src="{{ .Site.BaseURL }}imgs/obra-siguiente-volver-mob.webp"
+         src="{{ relURL "imgs/obra-siguiente-volver-mob.webp" }}"
          alt="Volver a las obras">
   </a>
 
   <div class="obra-navegación-siguiente">
     <a href="{{ $sig.Permalink }}">
-      {{- with (default ($sig.Resources.GetMatch "encabezado-main.*") ($sig.Resources.GetMatch "obra-pv.*")) -}}
+      {{- with default ($sig.Resources.GetMatch "encabezado-main.*") ($sig.Resources.GetMatch "obra-pv.*") -}}
       {{- $processed := .Fill "520x680 webp" -}}
       <img class="obra-navegación-siguiente__ilustración"
            src="{{ $processed.RelPermalink }}"
            alt="Ilustración de {{ $sig.Title }}">
       {{- end -}}
       <img class="obra-navegación-siguiente__cinta"
-           src="{{ .Site.BaseURL }}imgs/obra-siguiente-siguiente.webp"
+           src="{{ relURL "imgs/obra-siguiente-siguiente.webp" }}"
            alt="Próxima obra">
     </a>
   </div>
 
   <div class="obra-navegación-siguiente-mob">
     <img class="obra-navegación-siguiente-mob__prox"
-         src="{{ .Site.BaseURL }}imgs/obra-siguiente-siguiente-mob.webp"
+         src="{{ relURL "imgs/obra-siguiente-siguiente-mob.webp" }}"
          alt="Próxima obra">
 
     <a href="{{ $sig.Permalink }}">
       <img class="obra-navegación-siguiente-mob__sig"
-           src="{{ .Site.BaseURL }}imgs/obra-siguiente-cinta-gris.webp"
+           src="{{ relURL "imgs/obra-siguiente-cinta-gris.webp" }}"
            alt="{{ $sig.Title }}">
 
       <div class="obra-navegación-siguiente-mob__sig-texto">
