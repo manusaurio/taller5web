@@ -18,6 +18,20 @@
         <h3>{{ .Title }}</h3>
       </div>
 
+
+      <div class="obra-encabezado-categorías-overlay obra-encabezado-sombreado-texto">
+        {{- range .Params.categories -}}
+          <div class="obra-texto-categoría centro">
+            {{- $palabras := split . " " -}}
+            {{- $ultEspaciado := sub (len $palabras) 1  -}}
+
+            {{- range $i, $p := $palabras -}}
+            <span>{{ $p }}{{ if lt $i $ultEspaciado }} {{ end }}</span>
+            {{- end -}}
+          </div>
+          {{- end -}}
+      </div>
+
       {{- with $headerMain -}}
       {{- $processed := .Fill "677x756 webp" -}}
       <img class="obra-encabezado-contenido__foto-principal" src="{{ $processed.RelPermalink }}">
@@ -46,14 +60,18 @@
       </div>
 
       <div class="obra-encabezado-contenido-extra">
-        {{- $palabras := split (.Params.categories) " " -}}
-        {{- $ultEspaciado := sub (len $palabras) 1  -}}
+        <div class="obra-encabezado-sombreado-texto">
+          {{- range .Params.categories -}}
+          <div class="obra-texto-categoría">
+            {{- $palabras := split . " " -}}
+            {{- $ultEspaciado := sub (len $palabras) 1  -}}
 
-        <h3 class="obra-encabezado-sombreado-texto">
-          {{- range $i, $p := $palabras -}}
-          <span>{{ $p }}{{ if lt $i $ultEspaciado }} {{ end }}</span>
+            {{- range $i, $p := $palabras -}}
+            <span>{{ $p }}{{ if lt $i $ultEspaciado }} {{ end }}</span>
+            {{- end -}}
+          </div>
           {{- end -}}
-        </h3>
+        </div>
         {{- with $headerMini -}}
         {{- $processed := .Fill "390x260 webp" -}}
         <img class="obra-encabezado-sombreado-caja"

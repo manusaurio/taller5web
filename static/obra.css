@@ -1,3 +1,59 @@
+.obra-encabezado-categorías-overlay {
+  position: absolute;
+  margin-top: 30px;
+  display: none;
+}
+
+.obra-texto-categoría {
+  line-height: 1;
+  text-transform: capitalize;
+  color: white;
+  position: relative;
+  z-index: 5;
+  font-family: 'DCC Ash';
+  font-size: 3rem;
+  white-space: nowrap;
+
+  /* TODO: se podría refactorizar toda esta cosa con los headings, but let's get this moving*/
+  span:not(:first-child) {
+    color: yellow;
+  }
+
+  @media (min-width: 1151px) and (max-width: 1300px) {
+    font-size: 2.8rem;
+  }
+
+  @media (min-width: 1001px) and (max-width: 1150px) {
+    font-size: 2.4rem;
+  }
+
+  @media (min-width: 851px) and (max-width: 1000px) {
+    font-size: 2.0rem;
+  }
+
+  @media (min-width: 751px) and (max-width: 850px) {
+    font-size: 1.8rem;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 1.7rem;
+    top: 0;
+    left: 0;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1.5rem;
+  }
+}
+
+.obra-texto-categoría.centro {
+  text-align: center;
+}
+
 .obra-encabezado {
   display: flex;
   position: relative;
@@ -10,6 +66,7 @@
   background-position: 0 0;
   background-size: auto auto, cover;
   background-repeat: repeat, no-repeat;
+  overflow: hidden;
 
   .obra-encabezado-artimañas {
     position: absolute;
@@ -44,11 +101,6 @@
     line-height: 1;
     text-transform: capitalize;
     color: white;
-  }
-
-  /* TODO: se podría refactorizar toda esta cosa con los headings, but let's get this moving*/
-  h3 span:not(:first-child) {
-    color: yellow;
   }
 
   .obra-encabezado-contenido {
@@ -252,6 +304,10 @@
 }
 
 @media (max-width: 720px) {
+  .obra-encabezado-categorías-overlay {
+    display: initial;
+  }
+
   .obra-encabezado {
     position: relative;
     overflow: hidden;
