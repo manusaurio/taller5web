@@ -1,5 +1,5 @@
 .header-header{
-    background-image: url('imgs/header-fondo-2.png');
+    background-image: url('imgs/header-fondo.png');
     background-size: cover;
 }
 
@@ -9,12 +9,11 @@
     align-items: center;
     font-family: 'DCC Ash';
     padding: 2vh;
-    height: 8vh;
+    height: 15vh;
   }
   
 .barra-de-navegación ul > li {
-    font-size: 2em;
-    letter-spacing: 1%;
+    font-size: 2.5em;
     display: inline;
     padding: .8em;
 }
@@ -34,6 +33,7 @@
 .encabezado img{
     width: 80%;
     padding-right: 2%;
+    margin-top: 8vh;
 }
 .fecha{
     width: 100%;
@@ -60,7 +60,7 @@
     }
 
     .barra-de-navegación ul > li {
-        font-size: 1em;
+        font-size: 1.5em;
     }
 
     .encabezado img {
