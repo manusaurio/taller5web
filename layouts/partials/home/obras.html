@@ -1,9 +1,156 @@
-<main>
-  <h2>Obras:</h2>
-  {{ range where .Site.RegularPages.ByDate "Type" "obra" }}
-  <div>
-    <a href="{{ .Permalink }}"><h3>{{ .Title }}</h3></a>
-    {{ .Description }}
-  </div>
+<h2>Obras</h2>
+
+<div class="home-lista-obra__dropdown-filtros-contenedor">
+  <span>Categoría: </span>
+  <select id="home-lista-obra__dropdown-filtros">
+    <option value="">Ver todo</option>
+    
+    {{- range $categoria, $_ := .Site.Taxonomies.categories -}}
+    <option value="obra-cat-{{ anchorize $categoria }}">
+    {{ $categoria | humanize }}
+    </option>
+    {{- end -}}
+  </select>
+</div>
+  
+  <div id="home-lista-obras__filtros">
+  {{ range $categoria, $_ := .Site.Taxonomies.categories }}
+    <span data-categoría="obra-cat-{{ anchorize $categoria }}">{{ $categoria | humanize }}</span>
   {{ end }}
-</main>
+  </div>
+
+<div class="home-zona-lista-obras">
+  <div id="home-lista-obras__lista">
+    {{ range where .Site.RegularPages.ByDate "Type" "obra" }}
+    <div class="home-lista-obras__card{{ range .Params.categories }} obra-cat-{{ anchorize . }}{{ end }}">
+      <a href="{{ .RelPermalink }}">
+
+        <div class="home-lista-obras__card-fondo" >
+          <div class="parte-ilustrada">
+            {{- with .Resources.GetMatch "encabezado-main.*" -}}
+            <img class="parte-ilustrada-original" src="{{ (.Fill "220x386").RelPermalink }}">
+            {{- end -}}
+            <img class="parte-ilustrada-trama" src="{{ relURL "imgs/obra-card-trama.webp" }}">
+
+            <div class="parte-ilustrada-overlay"></div>
+          </div>
+
+          <img class="ilustración-cubierta" src="{{ relURL "imgs/obra-card-cubierta.webp" }}" width="100%" height="100%">
+        </div>
+
+        <div class="home-lista-obras__card-texto">
+          <div class="home-lista-obras__card-texto__crédito">
+            <h5>"{{ .Title }}"</h5>
+            <span>por {{ .Params.artist }}</span>
+          </div>
+
+          <div class="home-lista-obras__card-texto__fecha-lugar">
+            <div>25/11</div>
+            <div>
+              <span>Facultad de artes</span>
+              <span>Sede fonseca</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    {{ end }}
+  </div>
+
+  <button id="obras-nav-retroceder" class="obras-nav-botón"><img src="{{ relURL "imgs/icono-flecha.svg" }}"></button>
+  <button id="obras-nav-avanzar" class="obras-nav-botón"><img src="{{ relURL "imgs/icono-flecha.svg" }}"></button>
+</div>
+
+<script>
+const $ = document.getElementById.bind(document);
+  
+const listaDeObras = $('home-lista-obras__lista');
+const botonesFiltroDeObras = $('home-lista-obras__filtros');
+const dropdownDeFiltros = $('home-lista-obra__dropdown-filtros');
+const obras = listaDeObras.querySelectorAll('[class^="obra-cat-"], [class*=" obra-cat-"]');
+const botónRetroceder = $('obras-nav-retroceder');
+const botónAvanzar = $('obras-nav-avanzar');
+
+let claseMostrada = '';
+
+/**
+ * recibe el nombre de la clase a activar
+ * (pasar valor falsy si se quiere desactivar todo)
+ */
+const estilizarBotones = (clase) => {
+  for (const botónDeFiltro of botonesFiltroDeObras.children) botónDeFiltro.classList.remove('obra-filtro-activo');
+
+  if (clase) {
+    const botónAResaltar = Array.prototype.find.call(
+      botonesFiltroDeObras.children,
+      e => e.dataset.categoría === clase,
+    );
+
+    botónAResaltar.classList.add('obra-filtro-activo');
+  }
+}
+
+const filtrar = (claseSeleccionada) => {
+  claseMostrada = claseSeleccionada === claseMostrada ? '' : claseSeleccionada;
+
+  estilizarBotones(claseMostrada);
+  dropdownDeFiltros.value = claseMostrada;
+
+  if (!claseMostrada) {
+    for (const obra of obras) obra.classList.remove('obra-cat-filtrado');
+
+    return;
+  }
+
+  for (const obra of obras) {
+    if (!obra.classList.contains(claseMostrada)) obra.classList.add('obra-cat-filtrado');
+    else obra.classList.remove('obra-cat-filtrado');
+  }
+}
+
+for (const botónFiltro of botonesFiltroDeObras.children) {
+  if (botónFiltro.dataset.categoría !== undefined) {
+    botónFiltro.addEventListener('click', (e) => {
+      const claseSeleccionada = e.target.dataset.categoría === claseMostrada ? '' : e.target.dataset.categoría;
+      filtrar(claseSeleccionada);
+      decidirVisibilidadEnBotones();
+    });
+  }
+}
+
+dropdownDeFiltros.addEventListener('change', e => {
+  filtrar(e.target.value);
+  decidirVisibilidadEnBotones();
+});
+
+const mover = (n) => {
+  const ancho = Array.prototype.find.call(obras, e => e.offsetWidth > 0).offsetWidth ?? 0;
+
+  listaDeObras.scrollLeft += ancho * n;
+}
+
+botónRetroceder.addEventListener('click', () => mover(-1));
+botónAvanzar.addEventListener('click', () => mover(1));
+
+const decidirVisibilidadEnBotones = () => {
+  let ubicación = listaDeObras.scrollLeft === 0
+                  ? 'comienzo'
+                  : listaDeObras.scrollLeft + listaDeObras.clientWidth >= listaDeObras.scrollWidth
+                    ? 'final'
+                    : 'intermedio';
+
+  let esScrollable = listaDeObras.scrollWidth > listaDeObras.clientWidth;
+
+  botónAvanzar.style.display = !esScrollable || ubicación === 'final' ? 'none' : '';
+  botónRetroceder.style.display = !esScrollable || ubicación === 'comienzo' ? 'none' : '';
+};
+
+window.addEventListener('resize', decidirVisibilidadEnBotones);
+
+window.addEventListener('load', decidirVisibilidadEnBotones);
+
+// scrollend no está soportado aún en Safari pero whatever
+listaDeObras.addEventListener("scrollend", (e) => {
+  if (e.target === listaDeObras) decidirVisibilidadEnBotones();
+});
+</script>
