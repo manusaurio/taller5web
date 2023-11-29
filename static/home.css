@@ -1,12 +1,10 @@
-#barra-de-navegación {
-  text-align: center;
-}
-
-#barra-de-navegación ul > li {
-  display: inline;
+.descripción-evento-wrapper {
+  width: 100%;
+  background-image: url('imgs/header-fondo-pie-patrón.webp');
 }
 
 .descripción-evento {
+  color: white;
   display: grid;
   width: 100%;
   max-width: 1366px;
