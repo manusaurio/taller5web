@@ -740,8 +740,8 @@
 }
 
 @media (min-aspect-ratio: 507/531) and (max-aspect-ratio: 1382 / 1064) {
-  .obra-navegación .obra-navegación__persona {
-    right: 64%;
+  .obra-navegación .obra-navegación__persona.persona-foto-grande {
+    right: 62%;
   }
 
   .obra-navegación .obra-navegación__volver {
