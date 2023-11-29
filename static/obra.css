@@ -223,6 +223,11 @@
               padding-bottom: 0.4rem;
             }
 
+            .texto-biográfico {
+              max-height: 14vh;
+              overflow-y: scroll;
+            }
+
             > div {
               p {
                 text-align: justify;
@@ -276,9 +281,8 @@
   }
 
   .obra-encabezado-contenido__bio-encabezado__cuerpo-wrapper {
-    > div {
-      max-height: 100px;
-      overflow-y: scroll;
+    .texto-biográfico {
+      max-height: 80px;
     }
   }
 

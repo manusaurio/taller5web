@@ -1,6 +1,7 @@
 <header class="obra-encabezado">
   {{- $headerMain := .Resources.GetMatch "encabezado-main.*" -}}
   {{- $headerMini := .Resources.GetMatch "encabezado-mini.*" -}}
+  {{- $page := .Page -}}
 
   <img class="obra-encabezado-artimañas"
        src="{{ relURL "imgs/obra-header-artimañas.png"}}">
@@ -51,10 +52,11 @@
           {{- end -}}
           <div>
             {{ $artista := .Params.artist }}
-            {{ with .Resources.GetMatch "bio.md" }}
+            {{/* usamos .txt en vez de .md para hacerle la vida más fácil a la gente */}}
+            {{ with .Resources.Get "bio.txt" }}
             <h3>Sobre {{ $artista }}</h3>
-            <div>
-              {{ .Content }}
+            <div class="texto-biográfico">
+              {{ .Content | $page.RenderString (dict "display" "block") }}
             </div>
             {{ end }}
           </div>
