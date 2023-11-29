@@ -2,29 +2,25 @@
   <nav class="barra-de-navegación">
     <ul>
       <li><a href="#el-evento">El evento</a></li>
-      <li><a href="#obras">Obras</a></li>
-      <li><a href="#socials">Contacto</a></li>
+      <li><a href="#listado-de-obras">Obras</a></li>
     </ul>
   </nav>
 
   <div class="contenedor">
     <div class="encabezado">
-      <img src='{{ absURL "imgs/header-artim.png" }}' />
+      <img src='{{ relURL "imgs/header-artim.png" }}' />
     </div>
 
     <div class="fecha">
-      <img src='{{ absURL "imgs/header-v.png" }}' />
+      <img src='{{ relURL "imgs/header-v.png" }}' />
     </div>
 
-    <div class="socials" id="socials">
+    <div class="socials">
       <a href="https://www.instagram.com/festivalartimanas/"
-        ><img src='{{ absURL "imgs/header-ig.png" }}'
-      /></a>
-      <a href="https://www.tiktok.com/@festivalartimanas"
-        ><img src='{{ absURL "imgs/header-tiktok.png" }}'
+        ><img src='{{ relURL "imgs/logo-instagram.svg" }}'
       /></a>
       <a href="https://www.facebook.com/festival.de.artimanas">
-        <img src='{{ absURL "imgs/header-fb.png" }}' />
+        <img src='{{ relURL "imgs/logo-facebook.svg" }}' />
       </a>
     </div>
   </div>

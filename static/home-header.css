@@ -1,43 +1,43 @@
 .header-header{
-    background-image: url('imgs/header-fondo.png');
+    background-image: url('imgs/header-fondo.webp');
     background-size: cover;
+    overflow: hidden;
 }
 
 .barra-de-navegación {
+    font-family: 'DCC Ash';
+    padding-top: 50px;
+    column-gap: 20px;
+    color: white;
+  }
+
+.barra-de-navegación ul {
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-family: 'DCC Ash';
-    padding: 2vh;
-    height: 15vh;
-  }
-  
+    gap: clamp(5%, 10px, 60px);
+}
+
 .barra-de-navegación ul > li {
     font-size: 2.5em;
     display: inline;
-    padding: .8em;
 }
 .contenedor{
+    position: relative;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     width: 100%;
-    height: fit-content;
+    min-height: 550px;
 }
 .encabezado{
     display: flex;
-    justify-content: flex-end;
-    width: 100%;
+    justify-content: center;
+    padding-top: 100px;
+    transform: translateX(8%);
 }
 
 .encabezado img{
-    width: 80%;
-    padding-right: 2%;
-    margin-top: 8vh;
-}
-
-.fecha{
-    width: 100%;
+    width: 70%;
 }
 
 .fecha img{
@@ -47,17 +47,27 @@
 .socials{
     display: flex;
     justify-content: center;
-    width: 100%;
-    padding-bottom: 8vw;
-}
+    column-gap: 30px;
+    margin-top: auto;
+    margin-bottom: 70px;
+    height: 60px;
 
-.socials a{
-    padding: 0vh 1vw;
+    @media screen and (max-width: 720px) {
+        height: 30px;
+    }
+
+    a {
+        height: 100%;
+
+        img {
+            height: 100%;
+        }
+    }
 }
 
 @media screen and (max-width: 720px) {
     .header-header{
-        background-image: url('imgs/header-fondo-mobile.png');
+        background-image: url('imgs/header-fondo-mobile.webp');
         background-size: cover;
     }
 
@@ -71,14 +81,6 @@
 
     .fecha img {
         width: 40%;
-        padding: 15% 0vw;
-    }
-
-    .socials{
-        padding: 15% 0vw;
-    }
-
-    .socials a{
-        padding: 0vh 2%;
+        padding: 15% 0;
     }
 }
