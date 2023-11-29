@@ -1,8 +1,14 @@
-{{ define "head" }}
-<link rel="stylesheet" href="{{ .Site.BaseURL }}/home.css" />
-<link rel="stylesheet" href="{{ .Site.BaseURL }}/home-header.css" />
-{{ end }} {{ define "body" }}
-<div style="background: black; color: white">
-  {{ partial "home/header.html" . }} {{ partial "home/evento.html" }}
-</div>
-{{ partial "home/obras.html" . }} {{ end }}
+{{- define "head" -}}
+<link rel="stylesheet" href="{{ relURL "home.css" }}" />
+<link rel="stylesheet" href="{{ relURL "home-header.css" }}" />
+{{- end -}}
+{{- define "body" -}}
+  <div>
+    {{- partial "home/header.html" . -}}
+    {{- partial "home/evento.html" -}}
+  </div>
+
+  <main class="home-lista-obras">
+    {{- partial "home/obras.html" . -}}
+  </main>
+{{- end -}}

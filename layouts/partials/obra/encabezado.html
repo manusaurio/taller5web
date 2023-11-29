@@ -1,4 +1,87 @@
-<header>
-  <h2>{{ .Title }}</h2>
-  <p>Hecho por {{ .Params.artist }}</p>
+<header class="obra-encabezado">
+  {{- $headerMain := .Resources.GetMatch "encabezado-main.*" -}}
+  {{- $headerMini := .Resources.GetMatch "encabezado-mini.*" -}}
+  {{- $page := .Page -}}
+
+  <img class="obra-encabezado-artimañas"
+       src="{{ relURL "imgs/obra-header-artimañas.png"}}">
+
+  <img class="obra-encabezado-adorno-top-right"
+       src="{{ relURL "imgs/obra-header-adorno-top-right.webp" }}">
+
+  <img class="obra-encabezado-adorno-bottom-left"
+       src="{{ relURL "imgs/obra-header-adorno-bottom-left.webp" }}">
+
+  <div class="obra-encabezado-contenido">
+    <div class="obra-encabezado-contenido-wrapper">
+      <div class="obra-encabezado-contenido__título">
+        <img src="{{ relURL "imgs/obra-header-cinta-obra.webp" }}">
+        <h3>{{ .Title }}</h3>
+      </div>
+
+
+      <div class="obra-encabezado-categorías-overlay obra-encabezado-sombreado-texto">
+        {{- range .Params.categories -}}
+          <div class="obra-texto-categoría centro">
+            {{- $palabras := split . " " -}}
+            {{- $ultEspaciado := sub (len $palabras) 1  -}}
+
+            {{- range $i, $p := $palabras -}}
+            <span>{{ $p }}{{ if lt $i $ultEspaciado }} {{ end }}</span>
+            {{- end -}}
+          </div>
+          {{- end -}}
+      </div>
+
+      {{- with $headerMain -}}
+      {{- $processed := .Fill "677x756 webp" -}}
+      <img class="obra-encabezado-contenido__foto-principal" src="{{ $processed.RelPermalink }}">
+      {{- end -}}
+
+      <div class="obra-encabezado-contenido__bio">
+        <div class="obra-encabezado-contenido__bio-encabezado">
+          <img src="{{ relURL "imgs/obra-header-cinta-artista.webp" }}">
+          <div class="obra-encabezado-contenido__bio-encabezado-nombre">
+            {{ .Params.artist }}
+          </div>
+        </div>
+
+        <div class="obra-encabezado-sombreado-caja obra-encabezado-contenido__bio-encabezado__cuerpo-wrapper">
+          {{- with .Resources.GetMatch "encabezado-artista.*" -}}
+          <img src="{{ .RelPermalink }}">
+          {{- end -}}
+          <div>
+            {{ $artista := .Params.artist }}
+            {{/* usamos .txt en vez de .md para hacerle la vida más fácil a la gente */}}
+            {{ with .Resources.Get "bio.txt" }}
+            <h3>Sobre {{ $artista }}</h3>
+            <div class="texto-biográfico">
+              {{ .Content | $page.RenderString (dict "display" "block") }}
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+
+      <div class="obra-encabezado-contenido-extra">
+        <div class="obra-encabezado-sombreado-texto">
+          {{- range .Params.categories -}}
+          <div class="obra-texto-categoría">
+            {{- $palabras := split . " " -}}
+            {{- $ultEspaciado := sub (len $palabras) 1  -}}
+
+            {{- range $i, $p := $palabras -}}
+            <span>{{ $p }}{{ if lt $i $ultEspaciado }} {{ end }}</span>
+            {{- end -}}
+          </div>
+          {{- end -}}
+        </div>
+        {{- with $headerMini -}}
+        {{- $processed := .Fill "390x260 webp" -}}
+        <img class="obra-encabezado-sombreado-caja"
+             src="{{ $processed.RelPermalink }}">
+        {{- end -}}
+      </div>
+    </div>
+  </div>
 </header>

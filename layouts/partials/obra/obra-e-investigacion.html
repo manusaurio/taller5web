@@ -1,4 +1,4 @@
-<main class="obra-main bloque">
+<main class="obra-main">
   <div class="obra-investigacion">
       {{ with .Params.video }}
     <div class="obra-investigacion-video">
@@ -10,7 +10,7 @@
   </div>
 
   <div class="obra-investigación-división">
-    <img draggable="false" src="{{ .Site.BaseURL }}/imgs/divisor-obra-investigación.webp" alt="división">
+    <img draggable="false" src="{{ relURL "imgs/divisor-obra-investigación.webp" }}" alt="división">
 
     <a href="#top">
       <button>
@@ -31,7 +31,7 @@
 
         {{ with .Resources.GetMatch "*.pdf" }}
         <div class="button-wrapper">
-          <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer">
+          <a href="{{ .RelPermalink }}" target="_blank" rel="noopener noreferrer">
             <button class="botón-estilizado">Ver investigación</button>
           </a>
         </div>
@@ -39,7 +39,7 @@
       </div>
 
       {{ with .Resources.GetMatch "investigación-foto.*" }}
-      <img src="{{ .Permalink }}" alt="{{ default "Foto de investigación" .Params.researchImgAlt }}">
+      <img src="{{ .RelPermalink }}" alt="{{ default "Foto de investigación" .Params.researchImgAlt }}">
       {{ end }}
 
     </div>
