@@ -1,7 +1,10 @@
 .header-header{
-    background-image: url('imgs/header-fondo.webp');
-    background-size: cover;
+    background-image: url('imgs/header-fondo-pie.webp'), url('imgs/header-fondo.webp');
+    background-size: 1920px, cover;
+    background-position: bottom left, top left;
+    background-repeat: repeat-x, no-repeat;
     overflow: hidden;
+    position: relative;
 }
 
 .barra-de-navegación {
@@ -49,11 +52,12 @@
     justify-content: center;
     column-gap: 30px;
     margin-top: auto;
-    margin-bottom: 70px;
-    height: 60px;
+    margin-bottom: 200px;
+    height: 35px;
 
     @media screen and (max-width: 720px) {
         height: 30px;
+        margin-bottom: 30px;
     }
 
     a {
@@ -67,8 +71,7 @@
 
 @media screen and (max-width: 720px) {
     .header-header{
-        background-image: url('imgs/header-fondo-mobile.webp');
-        background-size: cover;
+        background-image: url('imgs/header-fondo-pie.webp'), url('imgs/header-fondo-mobile.webp');
     }
 
     .barra-de-navegación ul > li {
