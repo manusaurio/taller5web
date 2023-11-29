@@ -46,7 +46,9 @@
         </div>
 
         <div class="obra-encabezado-sombreado-caja obra-encabezado-contenido__bio-encabezado__cuerpo-wrapper">
-          <img src="encabezado-artista.png">
+          {{- with .Resources.GetMatch "encabezado-artista.*" -}}
+          <img src="{{ .RelPermalink }}">
+          {{- end -}}
           <div>
             {{ $artista := .Params.artist }}
             {{ with .Resources.GetMatch "bio.md" }}
