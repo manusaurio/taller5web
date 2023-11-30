@@ -6,7 +6,7 @@
 {{ with .Resources.GetMatch "encabezado-mini.*" }}
 <meta property="og:image" content="{{ .Permalink }}"/>
 {{ end }}
-<link rel="stylesheet" href="{{ absURL "obra.css" }}">
+<link rel="stylesheet" href="{{ relURL "obra.css" }}">
 {{ end }}
 {{ define "body" }}
 {{ partial "obra/encabezado" . }}
