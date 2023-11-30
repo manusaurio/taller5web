@@ -1,6 +1,10 @@
 {{- define "head" -}}
 <link rel="stylesheet" href="{{ relURL "home.css" }}" />
 <link rel="stylesheet" href="{{ relURL "home-header.css" }}" />
+<meta content="Artimañas 2023 - Home" property="og:title">
+<meta content="Desde 2011 se realiza el festival Artimañas en donde el conjunto del alumnado de Taller de Diseño Multimedial presenta sus trabajos finales de carrera." property="og:description">
+<meta content="{{ .Permalink }}" property="og:url">
+<meta content="{{ absURL "imgs/og-header-artim.jpg" }}" property="og:image">
 {{- end -}}
 {{- define "body" -}}
   <div>
