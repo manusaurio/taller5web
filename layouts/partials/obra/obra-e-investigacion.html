@@ -24,10 +24,28 @@
 
   <div class="investigación">
     <div class="investigación-contenido">
-      <div class="investigación-texto">
+
+      {{- $invFoto := .Resources.GetMatch "investigación-foto.*" -}}
+      {{- with $invFoto -}}
+        {{- if gt .Width 770 -}}
+          {{- $invFoto = .Resize "770x" -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{ $alignStyle := "" }}
+
+      {{ with $invFoto }}
+        {{ if gt .Height 350 }}
+          {{ $alignStyle = "align-self: flex-start" }}
+        {{ end }}
+      {{ end }}
+
+      <div class="investigación-texto" style="{{ $alignStyle }}">
         <h3>Investigación</h3>
-        {{ $archivoInv := printf "%s/investigación.md" .File.Dir }}
-        {{ readFile $archivoInv | markdownify }}
+        {{/* usamos .txt en vez de .md para hacerle la vida más fácil a la gente */}}
+        {{- with .Resources.Get "investigación.txt" -}}
+          {{- .Content | markdownify -}}
+        {{- end -}}
 
         {{ with .Resources.GetMatch "*.pdf" }}
         <div class="button-wrapper">
@@ -38,9 +56,9 @@
         {{ end }}
       </div>
 
-      {{ with .Resources.GetMatch "investigación-foto.*" }}
-      <img src="{{ .RelPermalink }}" alt="{{ default "Foto de investigación" .Params.researchImgAlt }}">
-      {{ end }}
+      {{- with $invFoto -}}
+        <img src="{{ .RelPermalink }}" alt="Foto de investigación">
+      {{- end -}}
 
     </div>
   </div>
