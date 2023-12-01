@@ -75,7 +75,12 @@
     position: absolute;
     top: 40px;
     left: 40px;
-    min-width: 10%
+    min-width: 10%;
+
+    > img {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 
   .obra-encabezado-adorno-top-right {
