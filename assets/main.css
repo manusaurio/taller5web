@@ -1,9 +1,26 @@
+@charset "utf-8";
+
 :root {
   font-size: 16px;
   font-family: 'Inter', sans-serif;
   --obra-gap: 30px;
   --obra-bloque-gap: 16px;
   --min-padding: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.5);
+  border-radius: 20px;
+  border: transparent;
 }
 
 * {

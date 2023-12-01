@@ -3,8 +3,9 @@
   {{- $headerMini := .Resources.GetMatch "encabezado-mini.*" -}}
   {{- $page := .Page -}}
 
-  <img class="obra-encabezado-artimañas"
-       src="{{ relURL "imgs/obra-header-artimañas.png"}}">
+  <a class="obra-encabezado-artimañas" href="{{ relURL "" }}">
+    <img src="{{ relURL "imgs/obra-header-artimañas.png"}}">
+  </a>
 
   <img class="obra-encabezado-adorno-top-right"
        src="{{ relURL "imgs/obra-header-adorno-top-right.webp" }}">

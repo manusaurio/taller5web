@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 .header-header{
     background-image: url('imgs/header-fondo-pie.webp'), url('imgs/header-fondo.webp');
     background-size: 1920px, cover;

@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 .obra-encabezado-categorías-overlay {
   position: absolute;
   margin-top: 30px;
@@ -73,7 +75,12 @@
     position: absolute;
     top: 40px;
     left: 40px;
-    min-width: 10%
+    min-width: 10%;
+
+    > img {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 
   .obra-encabezado-adorno-top-right {
@@ -226,7 +233,7 @@
 
             .texto-biográfico {
               max-height: 14vh;
-              overflow-y: scroll;
+              overflow-y: auto;
             }
 
             > div {
