@@ -226,7 +226,7 @@
 
             .texto-biográfico {
               max-height: 14vh;
-              overflow-y: scroll;
+              overflow-y: auto;
             }
 
             > div {
