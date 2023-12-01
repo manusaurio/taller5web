@@ -1,6 +1,9 @@
 {{- define "head" -}}
-<link rel="stylesheet" href="{{ relURL "home.css" }}" />
-<link rel="stylesheet" href="{{ relURL "home-header.css" }}" />
+{{- $homeCSS := resources.Get "home.css" | toCSS | minify | fingerprint -}}
+{{- $homeHeaderCSS := resources.Get "home-header.css" | toCSS | minify | fingerprint -}}
+
+<link rel="stylesheet" href="{{ $homeCSS.RelPermalink }}" />
+<link rel="stylesheet" href="{{ $homeHeaderCSS.RelPermalink }}" />
 <meta content="Artimañas 2023 - Home" property="og:title">
 <meta content="Desde 2011 se realiza el festival Artimañas en donde el conjunto del alumnado de Taller de Diseño Multimedial presenta sus trabajos finales de carrera." property="og:description">
 <meta content="{{ .Permalink }}" property="og:url">

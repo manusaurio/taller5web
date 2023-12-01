@@ -6,7 +6,8 @@
 {{ with .Resources.GetMatch "encabezado-mini.*" }}
 <meta property="og:image" content="{{ .Permalink }}"/>
 {{ end }}
-<link rel="stylesheet" href="{{ relURL "obra.css" }}">
+{{- $obraCSS := resources.Get "obra.css" | toCSS | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $obraCSS.RelPermalink }}">
 {{ end }}
 {{ define "body" }}
 {{ partial "obra/encabezado" . }}
