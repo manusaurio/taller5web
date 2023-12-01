@@ -3,7 +3,7 @@
 
   {{- $img := .Get "imagen" | .Page.Resources.Get -}}
   {{- with $img -}}
-    {{- $img := .Resize "643x webp q60" -}}
+    {{- $img := .Resize "643x webp q70 Linear" -}}
   <img src="{{ $img.RelPermalink }}" alt="{{ $altText }}">
   {{ end }}
   <div class="obra-investigacion-bloque-texto">
