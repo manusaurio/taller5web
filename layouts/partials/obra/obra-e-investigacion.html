@@ -28,7 +28,7 @@
       {{- $invFoto := .Resources.GetMatch "investigación-foto.*" -}}
       {{- with $invFoto -}}
         {{- if gt .Width 770 -}}
-          {{- $invFoto = .Resize "770x" -}}
+          {{- $invFoto = .Resize "770x Linear" -}}
         {{- end -}}
       {{- end -}}
 

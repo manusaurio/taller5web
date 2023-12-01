@@ -27,7 +27,7 @@
 
         <div class="home-lista-obras__card-fondo" >
           <div class="parte-ilustrada">
-            {{- with .Resources.GetMatch "encabezado-main.*" -}}
+            {{- with default (.Resources.GetMatch "encabezado-main.*") (.Resources.GetMatch "obra-thumbnail.*") -}}
             <img class="parte-ilustrada-original" src="{{ (.Fill "220x386").RelPermalink }}">
             {{- end -}}
             <img class="parte-ilustrada-trama" src="{{ relURL "imgs/obra-card-trama.webp" }}">

@@ -34,7 +34,7 @@
       </div>
 
       {{- with $headerMain -}}
-      {{- $processed := .Fill "677x756 webp" -}}
+      {{- $processed := .Fill "677x756 Linear webp" -}}
       <img class="obra-encabezado-contenido__foto-principal" src="{{ $processed.RelPermalink }}">
       {{- end -}}
 
@@ -77,7 +77,7 @@
           {{- end -}}
         </div>
         {{- with $headerMini -}}
-        {{- $processed := .Fill "390x260 webp" -}}
+        {{- $processed := .Fill "390x260 Linear webp" -}}
         <img class="obra-encabezado-sombreado-caja"
              src="{{ $processed.RelPermalink }}">
         {{- end -}}
