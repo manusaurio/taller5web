@@ -3,7 +3,6 @@ artist: Manuel Ignacio Pérez Alcolea
 categories:
 - Tecnología manipuladora
 date: '2023-11-28T14:16:45.481333'
-draft: true
 title: susurr.ar
 ---
 {{< texto-ilustrado imagen="1.jpg" >}}
