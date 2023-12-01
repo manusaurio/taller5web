@@ -11,7 +11,7 @@
   padding: var(--min-padding);
   box-sizing: border-box;
   margin: 0 auto;
-  grid-template-columns: 1fr min(65px, 5.5%) 50%;
+  grid-template-columns: 1fr Min(65px, 5.5%) 50%;
 }
 
 .descripción-evento-texto {
@@ -80,7 +80,7 @@
   position: relative;
   grid-template-columns: repeat(10, max-content);
   grid-auto-flow: row dense;
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   gap: var(--lista-obras-espaciado);
@@ -207,7 +207,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: linear-gradient(to bottom, rgba(244, 43, 174), rgba(244, 43, 174, 0.4) 115%);
+        background-image: linear-gradient(to bottom, rgba(244, 43, 174, 1.0), rgba(244, 43, 174, 0.4) 115%);
         mix-blend-mode: darken;
       }
     }
