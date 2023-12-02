@@ -78,6 +78,8 @@
 
 #home-lista-obras__lista {
   --lista-obras-espaciado: 5px;
+  --lista-obras-card-alto-y-ancho: 386px;
+  --lista-obras-padding-top-bottom: 15px;
   display: grid;
   position: relative;
   grid-template-columns: repeat(10, max-content);
@@ -86,14 +88,20 @@
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   gap: var(--lista-obras-espaciado);
-  padding-top: 15px;
-  padding-bottom: 15px;
+  box-sizing: border-box;
+  padding-top: var(--lista-obras-padding-top-bottom);
+  padding-bottom: var(--lista-obras-padding-top-bottom);
+  max-height: calc(
+    var(--lista-obras-card-alto-y-ancho) * 2
+    + var(--lista-obras-espaciado) * 2
+    + var(--lista-obras-padding-top-bottom) * 2 /* dejar en *1 si se quiere ocultar al siguiente*/
+  );
 
   .home-lista-obras__card {
     scroll-snap-align: start end;
     display: flex;
     color: white;
-    width: 386px;
+    width: var(--lista-obras-card-alto-y-ancho);
     aspect-ratio: 1/1;
 
     @media (max-width: 500px) {
