@@ -139,7 +139,7 @@ const decidirVisibilidadEnBotones = () => {
   // usar ese offset no es ideal, la verdad
   let ubicación = listaDeObras.scrollLeft === 0
                   ? 'comienzo'
-                  : listaDeObras.scrollLeft + listaDeObras.clientWidth >= listaDeObras.scrollWidth - finDeScrollOffset * 4 
+                  : listaDeObras.scrollLeft + listaDeObras.clientWidth >= listaDeObras.scrollWidth - finDeScrollOffset * 20 
                     ? 'final'
                     : 'intermedio';
 
