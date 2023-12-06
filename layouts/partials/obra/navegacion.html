@@ -18,7 +18,12 @@
   </defs>
 </svg>
 
-<div class="obra-navegación">
+<div class="obra-navegación" style="
+                                    background-image:  url('{{ (.Resources.Get "nav-fondo-nombre.png").RelPermalink }}'),
+                                                       url('{{ relURL "imgs/obra-siguiente-textura.webp" }}');
+                                    background-size: auto, cover;
+                                    background-position: 0px 20px, 0px 0px;
+                                    ">
   <div class="persona-wrapper">
     <img class="adornoA"
          src="{{ relURL "imgs/obra-siguiente-adorno.webp" }}">
