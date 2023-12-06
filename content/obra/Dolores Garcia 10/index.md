@@ -5,7 +5,7 @@ categories:
 date: '2023-11-28T14:16:28.481333'
 description: Experiencia que busca las reacciones del cuerpo frente a las imagenes
   para usarlas como potenciadoras de arte
-draft: true
+draft: false
 title: cuerpo.glitch
 ---
 {{< texto-ilustrado imagen="1.jpeg" >}}
