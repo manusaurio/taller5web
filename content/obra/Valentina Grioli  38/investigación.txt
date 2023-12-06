@@ -1,0 +1,5 @@
+En nuestro cotidiano, constantemente nos exponemos a situaciones donde se ponen en juego opiniones diversas. Estas pueden coincidir, o no, con la de los demás y generar así posibles debates. A este suceso, John Berger lo denomina “Modos de ver”, y sitúa a la idea de percepción como la base para comprender el mundo.
+
+Si ubicamos el análisis en un entorno artístico de interacción, podemos pensar que la percepción que tiene el público sobre las obras es única. Aquí, el público deja de ser un mero espectador para convertirse en pieza fundamental para el desarrollo de la experiencia.
+
+En la presente investigación se analizan distintas obras interactivas y se desarrolla la creación de “Nuestra Formación Estelar”, instalación interactiva generativa donde se exploran y combinan los modos de ver de dos usuarios de manera simultánea.

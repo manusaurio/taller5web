@@ -72,6 +72,7 @@ const dropdownDeFiltros = $('home-lista-obra__dropdown-filtros');
 const obras = listaDeObras.querySelectorAll('[class^="obra-cat-"], [class*=" obra-cat-"]');
 const botónRetroceder = $('obras-nav-retroceder');
 const botónAvanzar = $('obras-nav-avanzar');
+const finDeScrollOffset = parseInt(getComputedStyle(listaDeObras).getPropertyValue('--lista-obras-espaciado'));
 
 let claseMostrada = '';
 
@@ -135,9 +136,10 @@ botónRetroceder.addEventListener('click', () => mover(-1));
 botónAvanzar.addEventListener('click', () => mover(1));
 
 const decidirVisibilidadEnBotones = () => {
+  // usar ese offset no es ideal, la verdad
   let ubicación = listaDeObras.scrollLeft === 0
                   ? 'comienzo'
-                  : listaDeObras.scrollLeft + listaDeObras.clientWidth >= listaDeObras.scrollWidth
+                  : listaDeObras.scrollLeft + listaDeObras.clientWidth >= listaDeObras.scrollWidth - finDeScrollOffset * 20 
                     ? 'final'
                     : 'intermedio';
 

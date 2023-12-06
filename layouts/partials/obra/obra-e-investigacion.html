@@ -32,15 +32,7 @@
         {{- end -}}
       {{- end -}}
 
-      {{ $alignStyle := "" }}
-
-      {{ with $invFoto }}
-        {{ if gt .Height 350 }}
-          {{ $alignStyle = "align-self: flex-start" }}
-        {{ end }}
-      {{ end }}
-
-      <div class="investigación-texto" style="{{ $alignStyle }}">
+      <div class="investigación-texto">
         <h3>Investigación</h3>
         {{/* usamos .txt en vez de .md para hacerle la vida más fácil a la gente */}}
         {{- with .Resources.Get "investigación.txt" -}}
