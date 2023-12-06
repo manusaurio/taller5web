@@ -494,8 +494,8 @@
   /* se asume que la imagen tiene 1/4 de ancho que el del divisor */
   background-size: 25%;
   color: white;
-  padding-top: 50px;
-  padding-bottom: 30px;
+  padding-top: 100px;
+  padding-bottom: 150px;
 
   .investigación-contenido {
     padding-left: calc(var(--min-padding) * 4);
