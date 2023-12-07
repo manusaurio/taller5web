@@ -4,6 +4,17 @@ categories:
 - Cuerpo e identidad
 - Mirada
 date: '2023-11-28T14:16:50.481333'
-draft: true
+draft: false
 title: conhexibición
 ---
+{{< texto-ilustrado imagen="1.jpg" >}}
+### Proyección
+
+La idea para la proyección es que resulte imponente ante las personas al acercarse, produciendo una especie de intimidación al encontrarse con esta 1 a 1, incluso una especie de miedo ante los ojos que tan solemnemente miran fijo.
+{{</ texto-ilustrado >}}
+
+{{< texto-ilustrado imagen="2.jpg" >}}
+### Materialidad
+
+En cuanto a la materialidad, tras haber pasado por diferentes diferentes materiales buscando uno que cumpla con lo que necesitaba, encontré lo que es la parafina en gel, originalmente utilizada para hacer velas, pero en este caso me sirvió su maleabilidad para derretirlo y transformarlo en uin cerebro, su resistencia para la interactividad de tantxs usuarixs, su transparencia para que se vean los leds, y su viscosidad y pegajosidad para darle una experiencia más realista e incómoda a lxs usuarixs.
+{{</ texto-ilustrado >}}
