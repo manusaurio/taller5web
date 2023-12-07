@@ -5,7 +5,7 @@ categories:
 date: '2023-11-28T14:16:30.481333'
 description: Nebula es un videojuego espacial en el que controlas la nave “Celeste”
   para explorar un sistema planetario.
-draft: true
+draft: false
 title: Nebula
 ---
 {{< texto-ilustrado imagen="1.jpg" >}}
