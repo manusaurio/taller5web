@@ -5,7 +5,7 @@ categories:
 date: '2023-11-28T14:16:54.481333'
 description: Simulación interactiva que muestra la interacción de avatares 2d hacia
   un publico real
-draft: true
+draft: false
 title: Alicia a través del espejo 2D
 ---
 {{< texto-ilustrado imagen="1.jpg" >}}
