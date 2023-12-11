@@ -3,7 +3,7 @@ artist: Ludmila Juliana Laguto
 categories:
 - Cuerpo e identidad
 date: '2023-11-28T14:16:42.481333'
-draft: true
+draft: false
 title: Ser en Espejos
 ---
 ### Ser en Espejos

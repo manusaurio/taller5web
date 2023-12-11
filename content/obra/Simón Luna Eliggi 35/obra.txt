@@ -1,0 +1,8 @@
+1.png
+La obra está formada por una plataforma de dos metros por dos metros con una grilla verde y roja, se puede oír al ingresar a la sala un teléfono fijo sonando y una baldosa verde titilando.
+
+2.png
+Tras situarse el usuario sobre la baldosa, un foco incandescente comienza a titilar indicándole al usuario que otra baldosa está activa.
+
+3.png
+Al ingnorar las baldosas activas o en caso de pisar las baldosas rojas, el ruido y la intensidad de las luces comienza a aumentar y el suelo a vibrar hasta que el usuario se encargue de estos elementos o el tiempo termine.
