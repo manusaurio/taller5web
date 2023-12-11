@@ -54,7 +54,7 @@
   </a>
 
   <div class="obra-navegación-siguiente">
-    <a href="{{ $sig.Permalink }}">
+    <a href="{{ $sig.RelPermalink }}">
       {{- with default ($sig.Resources.GetMatch "encabezado-main.*") ($sig.Resources.GetMatch "obra-pv.*") -}}
       {{- $processed := .Fill "520x680 webp" -}}
       <img class="obra-navegación-siguiente__ilustración"
@@ -72,7 +72,7 @@
          src="{{ relURL "imgs/obra-siguiente-siguiente-mob.webp" }}"
          alt="Próxima obra">
 
-    <a href="{{ $sig.Permalink }}">
+    <a href="{{ $sig.RelPermalink }}">
       <img class="obra-navegación-siguiente-mob__sig"
            src="{{ relURL "imgs/obra-siguiente-cinta-gris.webp" }}"
            alt="{{ $sig.Title }}">
