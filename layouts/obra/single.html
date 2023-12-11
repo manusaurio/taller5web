@@ -3,8 +3,8 @@
 <meta property="og:type" content="article"/>
 <meta property="og:url" content="{{ .Permalink }}"/>
 <meta property="og:description" content="{{ default (.Summary | truncate 120) .Description }}"/>
-{{ with .Resources.GetMatch "encabezado-mini.*" }}
-<meta property="og:image" content="{{ .Permalink }}"/>
+{{ with .Resources.GetMatch "encabezado-main.*" }}
+<meta property="og:image" content="{{ (.Resize "400x Linear").Permalink }}"/>
 {{ end }}
 {{- $obraCSS := resources.Get "obra.css" | toCSS | minify | fingerprint -}}
 <link rel="stylesheet" href="{{ $obraCSS.RelPermalink }}">
