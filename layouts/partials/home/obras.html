@@ -1,23 +1,24 @@
 <h2>Obras</h2>
 
-<div class="home-lista-obra__dropdown-filtros-contenedor">
-  <span>Categoría: </span>
-  <select id="home-lista-obra__dropdown-filtros">
-    <option value="">Ver todo</option>
-    
-    {{- range $categoria, $_ := .Site.Taxonomies.categories -}}
-    <option value="obra-cat-{{ anchorize $categoria }}">
-    {{ $categoria | humanize }}
-    </option>
-    {{- end -}}
-  </select>
+<div class="home-lista-obras-dialog--acceso">
+  <span id="home-lista-obras-dialog--acceso__botón">Ver todo</span>
 </div>
-  
-  <div id="home-lista-obras__filtros">
-  {{ range $categoria, $_ := .Site.Taxonomies.categories }}
-    <span data-categoría="obra-cat-{{ anchorize $categoria }}">{{ $categoria | humanize }}</span>
-  {{ end }}
+
+<dialog id="home-lista-obras-dialog">
+  <h6 style="position: sticky; top: 0; background-color: white">Filtrar por categoría</h6>
+  <div class="obras-dialog-opción" data-categoría="">Ver todo</div>
+  {{- range $categoria, $_ := .Site.Taxonomies.categories -}}
+  <div class="obras-dialog-opción" data-categoría="obra-cat-{{ anchorize $categoria }}">
+  {{ $categoria | humanize }}
   </div>
+  {{- end -}}
+</dialog>
+
+<div id="home-lista-obras__filtros">
+{{ range $categoria, $_ := .Site.Taxonomies.categories }}
+  <span data-categoría="obra-cat-{{ anchorize $categoria }}">{{ $categoria | humanize }}</span>
+{{ end }}
+</div>
 
 <div class="home-zona-lista-obras">
   <div id="home-lista-obras__lista">
@@ -67,14 +68,24 @@
 const $ = document.getElementById.bind(document);
   
 const listaDeObras = $('home-lista-obras__lista');
+const filtroDialog = $('home-lista-obras-dialog');
+const filtroDialogBotón = $('home-lista-obras-dialog--acceso__botón');
 const botonesFiltroDeObras = $('home-lista-obras__filtros');
-const dropdownDeFiltros = $('home-lista-obra__dropdown-filtros');
 const obras = listaDeObras.querySelectorAll('[class^="obra-cat-"], [class*=" obra-cat-"]');
 const botónRetroceder = $('obras-nav-retroceder');
 const botónAvanzar = $('obras-nav-avanzar');
 const finDeScrollOffset = parseInt(getComputedStyle(listaDeObras).getPropertyValue('--lista-obras-espaciado'));
 
 let claseMostrada = '';
+
+const clasesNombres = Object.fromEntries(
+  Array.prototype.map.call(
+    botonesFiltroDeObras.children,
+    (e) => [e.dataset.categoría, e.innerText],
+  ),
+);
+
+clasesNombres[''] = 'Ver todo';
 
 /**
  * recibe el nombre de la clase a activar
@@ -97,7 +108,12 @@ const filtrar = (claseSeleccionada) => {
   claseMostrada = claseSeleccionada === claseMostrada ? '' : claseSeleccionada;
 
   estilizarBotones(claseMostrada);
-  dropdownDeFiltros.value = claseMostrada;
+  filtroDialogBotón.innerText = clasesNombres[claseMostrada];
+    
+  for (const opción of filtroDialog.children) {
+    if (opción.dataset.categoría === claseMostrada) opción.classList.add('obra-filtro-activo');
+    else opción.classList.remove('obra-filtro-activo');
+  }
 
   if (!claseMostrada) {
     for (const obra of obras) obra.classList.remove('obra-cat-filtrado');
@@ -120,11 +136,6 @@ for (const botónFiltro of botonesFiltroDeObras.children) {
     });
   }
 }
-
-dropdownDeFiltros.addEventListener('change', e => {
-  filtrar(e.target.value);
-  decidirVisibilidadEnBotones();
-});
 
 const mover = (n) => {
   const ancho = Array.prototype.find.call(obras, e => e.offsetWidth > 0).offsetWidth ?? 0;
@@ -157,4 +168,48 @@ window.addEventListener('load', decidirVisibilidadEnBotones);
 listaDeObras.addEventListener("scrollend", (e) => {
   if (e.target === listaDeObras) decidirVisibilidadEnBotones();
 });
+
+let clickeable = false;
+let cerrando = false;
+
+filtroDialog.addEventListener('cancel', (e) => {
+  e.preventDefault();
+});
+
+const abrirSelección = () => {
+  cerrando = false;
+  clickeable = true;
+  filtroDialog.showModal();
+  document.body.style.overflow = 'hidden';
+  filtroDialog.classList.add('home-lista-obras-dialog--abierto');
+}
+
+const cerrarSelección = () => {
+  cerrando = true;
+  clickeable = false;
+  filtroDialog.classList.remove('home-lista-obras-dialog--abierto');
+  document.body.style.overflow = '';
+}
+
+filtroDialog.querySelectorAll('.obras-dialog-opción').forEach(elección => {
+  elección.addEventListener('click', (e) => {
+    if (clickeable) {
+      cerrarSelección();
+      filtrar(e.target.dataset.categoría);
+      decidirVisibilidadEnBotones();
+    }
+  });
+});
+
+filtroDialog.addEventListener('transitionend', (e) => {
+  if (cerrando) {
+    filtroDialog.close();
+  }
+});
+
+filtroDialogBotón.addEventListener('click', (e) => {
+  abrirSelección();
+});
+
+filtrar('');
 </script>
