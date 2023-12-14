@@ -3,7 +3,7 @@ artist: Amanda Deyaneira Castillo Villota
 categories:
 - Otras sensorialidades
 date: '2023-11-28T14:16:20.481333'
-draft: true
+draft: false
 title: 'Sin aroma ni diagonales '
 ---
 
