@@ -392,5 +392,6 @@
     grid-auto-flow: column;
     grid-template-columns: initial;
     grid-template-rows: repeat(2, auto);
+    max-height: unset;
   }
 }
