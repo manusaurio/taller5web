@@ -112,15 +112,16 @@ const filtrar = (claseSeleccionada, togglear) => {
 
   ejecutarPrefiltro.forEach((f) => f(claseMostrada));
 
-  if (!claseMostrada) {
-    for (const obra of obras) obra.classList.remove('obra-cat-filtrado');
-
-    return;
-  }
-
   for (const obra of obras) {
-    if (!obra.classList.contains(claseMostrada)) obra.classList.add('obra-cat-filtrado');
-    else obra.classList.remove('obra-cat-filtrado');
+    obra.classList.remove('home-lista-obras__card--animación');
+    void obra.offsetWidth;
+    obra.classList.add('home-lista-obras__card--animación');
+
+    if (claseMostrada && !obra.classList.contains(claseMostrada)) {
+      obra.style.display = 'none';
+    } else {
+      obra.style.display = null;
+    }
   }
 
   ejecutarPosfiltro.forEach((f) => f(claseMostrada));
