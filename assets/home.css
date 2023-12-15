@@ -72,6 +72,10 @@
   > span {
     font-weight: 700;
     cursor: pointer;
+
+    &.obra-filtro-activo {
+      color: #EB0292;
+    }
   }
 }
 
@@ -104,10 +108,27 @@
 
   .home-lista-obras__card {
     scroll-snap-align: start end;
+    /* display: none; */
     display: flex;
     color: white;
     width: var(--lista-obras-card-alto-y-ancho);
     aspect-ratio: 1/1;
+
+    @keyframes moverDesdeArriba {
+      0% {
+        transform: translateY(-15%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    &--animación {
+      animation: 0.35s ease 0s 1 moverDesdeArriba;
+    }
 
     @media (max-width: 500px) {
       width: 100vw;
@@ -234,14 +255,6 @@
   }
 }
 
-.obra-cat-filtrado {
-  display: none !important;
-}
-
-.obra-filtro-activo {
-  color: #EB0292 !important;
-}
-
 .obras-nav-botón {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 10px;
   width: 60px;
@@ -343,10 +356,6 @@
     padding-right: var(--padding-x-opción);
     padding-top: 10px;
     padding-bottom: 10px;
-  }
-
-  div.obra-filtro-activo {
-    color: initial !important;
   }
 
   &.home-lista-obras-dialog--abierto {
