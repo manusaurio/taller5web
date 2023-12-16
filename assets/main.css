@@ -6,6 +6,7 @@
   --obra-gap: 30px;
   --obra-bloque-gap: 16px;
   --min-padding: 10px;
+  --color-acento: #EB0292;
 }
 
 ::-webkit-scrollbar {

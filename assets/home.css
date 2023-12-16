@@ -54,7 +54,7 @@ $móvil: 720px;
   padding-top: 20px;
 
   h2 {
-    color: #EB0292;
+    color: var(--color-acento);
     margin-bottom: -20px;
     text-align: center;
     text-transform: uppercase;
@@ -74,7 +74,7 @@ $móvil: 720px;
     cursor: pointer;
 
     &.obra-filtro-activo {
-      color: #EB0292;
+      color: var(--color-acento);
     }
   }
 }
