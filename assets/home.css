@@ -106,6 +106,10 @@ $móvil: 720px;
     + var(--lista-obras-padding-top-bottom) * 2 /* dejar en *1 si se quiere ocultar al siguiente*/
   );
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   .home-lista-obras__card {
     scroll-snap-align: start end;
     display: flex;
