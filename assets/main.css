@@ -80,11 +80,11 @@ button:hover {
   font-weight: bold;
   text-transform: uppercase;
 
-  :hover {
+  &:hover {
     background-color: silver;
   }
 
-  :active {
+  &:active {
     background-color: darkgray;
   }
 }
