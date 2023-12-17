@@ -13,7 +13,7 @@
     font-family: 'DCC Ash';
     padding-top: 50px;
     column-gap: 20px;
-    color: white;
+    color: white;    
   }
 
 .barra-de-navegación ul {
@@ -25,6 +25,14 @@
 .barra-de-navegación ul > li {
     font-size: 2.5em;
     display: inline;
+
+    a {
+        transition: color ease 0.1s;
+        
+        &:hover {
+            color: var(--color-acento);
+        }
+    }
 }
 .contenedor{
     position: relative;
@@ -49,24 +57,40 @@
     width: 20%;
 }
 
-.socials{
+.socials {
     display: flex;
+    width: 100%;
+    column-gap: 20px;
     justify-content: center;
-    column-gap: 30px;
+    height: 40px;
+
+    padding-bottom: 0;
+    color: white;
     margin-top: auto;
     margin-bottom: 200px;
-    height: 35px;
 
     @media screen and (max-width: 720px) {
         height: 30px;
         margin-bottom: 30px;
     }
 
-    a {
+    li {
+        display: inline-block;
+        min-height: 100%;
         height: 100%;
 
-        img {
+        a {
+            display: inline-block;
             height: 100%;
+
+            i.ícono {
+                min-height: 100%;
+                transition: color ease 0.1s;
+
+                &:hover {
+                    color: var(--color-acento);
+                }
+            }
         }
     }
 }
