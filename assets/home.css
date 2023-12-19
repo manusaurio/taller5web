@@ -104,6 +104,7 @@
 
   .home-lista-obras__card {
     scroll-snap-align: start end;
+    scroll-snap-stop: always;
     display: flex;
     color: white;
     width: var(--lista-obras-card-alto-y-ancho);
