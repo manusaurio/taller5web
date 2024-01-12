@@ -1,0 +1,11 @@
+---
+artist: Ludmila Juliana Laguto
+categories:
+- Cuerpo e identidad
+date: '2023-11-28T14:16:42.481333'
+draft: false
+title: Ser en Espejos
+---
+### Ser en Espejos
+
+A lo largo de nuestras experiencias, la identidad individual se reconstruye y redefine continuamente. La imagen reflejada deja de ser simplemente una representación externa para convertirse en un espejo que refleja la esencia interna del individuo. Somos uno y somos también, a partir del otro. El cuerpo y la tecnología como protagonistas de este proceso, nos conducen en un viaje donde tansitamos desde la fragmentación corporal hacia el consecuente relevamiento de una identidad que se resuelve para alcanzar una imagen de totalidad.
