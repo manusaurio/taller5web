@@ -4,19 +4,23 @@
   {{- $page := .Page -}}
 
   <a class="obra-encabezado-artimañas" href="{{ relURL "" }}">
-    <img src="{{ relURL "imgs/obra-header-artimañas.png"}}">
+    <img src="{{ relURL "imgs/obra-header-artimañas.png"}}" alt="Artimañas">
   </a>
 
   <img class="obra-encabezado-adorno-top-right"
-       src="{{ relURL "imgs/obra-header-adorno-top-right.webp" }}">
+       src="{{ relURL "imgs/obra-header-adorno-top-right.webp" }}"
+       alt=""
+       />
 
   <img class="obra-encabezado-adorno-bottom-left"
-       src="{{ relURL "imgs/obra-header-adorno-bottom-left.webp" }}">
+       src="{{ relURL "imgs/obra-header-adorno-bottom-left.webp" }}"
+       alt=""
+       />
 
   <div class="obra-encabezado-contenido">
     <div class="obra-encabezado-contenido-wrapper">
       <div class="obra-encabezado-contenido__título">
-        <img src="{{ relURL "imgs/obra-header-cinta-obra.webp" }}">
+        <img src="{{ relURL "imgs/obra-header-cinta-obra.webp" }}" alt="">
         <h3>{{ .Title }}</h3>
       </div>
 
@@ -36,12 +40,15 @@
 
       {{- with $headerMain -}}
       {{- $processed := .Fill "677x756 Linear webp" -}}
-      <img class="obra-encabezado-contenido__foto-principal" src="{{ $processed.RelPermalink }}">
+      <img class="obra-encabezado-contenido__foto-principal"
+           src="{{ $processed.RelPermalink }}"
+           alt="Fotografía ilustrativa de la obra."
+           />
       {{- end -}}
 
       <div class="obra-encabezado-contenido__bio">
         <div class="obra-encabezado-contenido__bio-encabezado">
-          <img src="{{ relURL "imgs/obra-header-cinta-artista.webp" }}">
+          <img src="{{ relURL "imgs/obra-header-cinta-artista.webp" }}" alt="">
           <div class="obra-encabezado-contenido__bio-encabezado-nombre">
             {{ .Params.artist }}
           </div>
@@ -49,7 +56,7 @@
 
         <div class="obra-encabezado-sombreado-caja obra-encabezado-contenido__bio-encabezado__cuerpo-wrapper">
           {{- with .Resources.GetMatch "encabezado-artista.*" -}}
-          <img src="{{ .RelPermalink }}">
+          <img src="{{ .RelPermalink }}" alt="Fotografía de {{ $page.Params.artist }}">
           {{- end -}}
           <div>
             {{ $artista := .Params.artist }}
@@ -80,7 +87,9 @@
         {{- with $headerMini -}}
         {{- $processed := .Fill "390x260 Linear webp" -}}
         <img class="obra-encabezado-sombreado-caja"
-             src="{{ $processed.RelPermalink }}">
+             src="{{ $processed.RelPermalink }}"
+             alt="Fotografía ilustrativa de la obra."
+             />
         {{- end -}}
       </div>
     </div>

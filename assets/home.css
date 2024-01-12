@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+$móvil: 720px;
+
 @font-face {
   font-family: 'Hit me punk';
   src: url('hitmepunk.ttf') format('truetype');
@@ -19,11 +21,28 @@
   box-sizing: border-box;
   margin: 0 auto;
   grid-template-columns: 1fr Min(65px, 5.5%) 50%;
-}
 
-.descripción-evento-texto {
-  box-sizing: border-box;
-  text-align: justify;
+  &-texto {
+    box-sizing: border-box;
+    text-align: justify;
+  }
+
+  &-imagen > img {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+  }
+
+  @media (max-width: $móvil) {
+    width: 100%;
+    grid-template-columns: 1fr;
+
+    &-imagen > img {
+      aspect-ratio: 1 / 1;
+    }
+  }
 }
 
 .button-wrapper {
@@ -31,30 +50,11 @@
   padding-bottom: 16px;
 }
 
-.descripción-evento-imagen > img {
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  object-fit: cover;
-  transform: scaleX(-1);
-}
-
-@media (max-width: 720px) {
-  .descripción-evento {
-    width: 100%;
-    grid-template-columns: 1fr;
-  }
-
-  .descripción-evento-imagen > img {
-    aspect-ratio: 1 / 1;
-  }
-}
-
 .home-lista-obras {
   padding-top: 20px;
 
   h2 {
-    color: #EB0292;
+    color: var(--color-acento);
     margin-bottom: -20px;
     text-align: center;
     text-transform: uppercase;
@@ -74,7 +74,7 @@
     cursor: pointer;
 
     &.obra-filtro-activo {
-      color: #EB0292;
+      color: var(--color-acento);
     }
   }
 }
@@ -106,9 +106,13 @@
     + var(--lista-obras-padding-top-bottom) * 2 /* dejar en *1 si se quiere ocultar al siguiente*/
   );
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   .home-lista-obras__card {
     scroll-snap-align: start end;
-    /* display: none; */
+    scroll-snap-stop: always;
     display: flex;
     color: white;
     width: var(--lista-obras-card-alto-y-ancho);
@@ -152,7 +156,7 @@
       height: 100%;
       width: 59%;
 
-      .home-lista-obras__card-texto__fecha-lugar {
+      &__fecha-lugar {
         display: flex;
         justify-content: flex-end;
         font-size: 19px;;
@@ -177,7 +181,7 @@
         }
       }
 
-      .home-lista-obras__card-texto__crédito {
+      &__crédito {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -192,7 +196,7 @@
         padding: 10px;
       }
 
-      h5 {
+      h3 {
         font-size: 30px;
         font-family: 'Hit me punk';
       }
@@ -229,20 +233,20 @@
         width: 100%;
       }
 
-      .parte-ilustrada-original {
+      &-original {
         display: block;
         filter:  grayscale(1);
         object-fit: cover;
       }
 
-      .parte-ilustrada-trama {
+      &-trama {
         top: 0;
         left: 0;
         position: absolute;
         mix-blend-mode: overlay;
       }
 
-      .parte-ilustrada-overlay {
+      &-overlay {
         position: absolute;
         top: 0;
         left: 0;
@@ -278,6 +282,7 @@
   }
 
   @media (max-width: 500px) {
+    height: 30px;
     width: 30px;
     margin-left: 5px;
     margin-right: 5px;
@@ -288,11 +293,15 @@
   }
 }
 
-#obras-nav-retroceder {
+@mixin bot-nav-pos-vertical {
   position: absolute;
-  left: 0;
   top: 50%;
   transform: translateY(-50%);
+}
+
+#obras-nav-retroceder {
+  @include bot-nav-pos-vertical;
+  left: 0;
 
   img {
     transform: rotate(270deg);
@@ -300,10 +309,8 @@
 }
 
 #obras-nav-avanzar {
-  position: absolute;
+  @include bot-nav-pos-vertical;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 
   img {
     transform: rotate(90deg);
@@ -383,13 +390,13 @@
 }
 
 /* comienzo de switch de visibilidad de filtros */
-@media (max-width: 720px) {
+@media (max-width: $móvil) {
   #home-lista-obras__filtros {
     display: none;
   }
 }
 
-@media (min-width: 721px) {
+@media (min-width: $móvil + 1px) {
   .home-lista-obras-dialog--acceso {
     display: none;
   }
