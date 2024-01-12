@@ -1,0 +1,25 @@
+---
+artist: Denise Dukart
+categories:
+- Tecnología manipuladora
+date: '2023-11-28T14:16:26.481333'
+description: Espiral es una obra interactiva que nos invita a repensar nuestra relación
+  con el tiempo.
+draft: false
+title: Espiral
+---
+{{< texto-ilustrado imagen="1.jpg" >}}
+### Tiempo acelerado
+
+Espiral surge de una investigación que realicé en torno al tiempo y las redes sociales, el tiempo es una dimensión que utilizamos para organizar nuestras vidas, si bien se puede medir de manera cuantitativa la manera en cómo lo experimentamos es un fenómeno subjetivo; para algunos autores como Harmut Rosa vivimos atravesados por un régimen temporal estricto definido por la aceleración.
+
+Como individuos sumergidos en un sistema neoliberal, sentimos constantemente la presión de los plazos, la introducción de sistemas infotecnológicos modificó nuestros modos de comprender y ver el mundo, así los celulares se nos presentan como una extensión de nuestro cuerpo, que demandan atención y nos desconectan del entorno.
+
+Las redes sociales incrementan ese vértigo a la velocidad, su rentabilidad se basa en la permanencia de los usuarios en su plataformas, así actualmente vivimos en la eterna inmediatez, se nos irrumpe constantemente con estímulos para mantenernos obnubilados en ellas, perdemos así nuestra noción de las horas.
+{{</ texto-ilustrado >}}
+
+{{< texto-ilustrado imagen="2.jpg" >}}
+### Aceleración vs Resonancia
+
+Con esta idea surge la obra interactiva Espiral, consta de un tótem de 2 lados (similar a los tótem publicitarios de los shoppings), del lado A se invita al usuario a detenerse contemplando una serie de videos que tratan acerca de la naturaleza. Del lado B se lo incentiva a intervenir, visualizando los mismos videos puede modificarlos mediante la interacción a partir de sus gestos; la idea fue hacer converger en un mismo espacio movimiento y quietud, aceleración y resonancia, que se invite a repensar nuestra relación con el tiempo.
+{{</ texto-ilustrado >}}

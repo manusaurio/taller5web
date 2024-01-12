@@ -1,0 +1,23 @@
+
+El streaming se volvió una nueva forma de entretenimiento, y dentro de este espacio existen quienes optan por no mostrar su rostro y prefieren hacerlo usando un avatar 2D o 3D para este tipo de servicios.
+Con esto en mente, estudie como fue el proceso de creación de un avatar 2D con fines de streaming.
+
+Para comenzar busqué un diseño para el personaje, este fue el primer intento, el cual no quedó porque podía pasar muy desapercibido y era demasiado apagado para ser un avatar. Iván Dario Botero Rodriguez,  El personaje es una entidad individual y puede simplemente ser la representación gráfica de una idea caracterizada.
+
+ Con esto en mente empecé a diseñarlo teniendo en cuenta que una paleta de colores llamativa, algún rasgo específico que lo haga resaltar del resto,(en este caso las orejas) y que al mismo tiempo  tenga una estética fija.
+
+Así nació DOLL, que conservaba algunas características del anterior pero ahora con lo mencionado anteriormente. Contaba con una paleta de colores más armoniosa, con un diseño atractivo para el usuario, siguiendo una estética de fantasía bajo la idea de Alicia en el país de las maravillas, usando el personaje del conejo blanco como protagonista. Por un lado haciendo referencia a cómo se usa esto como una forma de escape de la realidad y como el avatar funciona como nexo entre el usuario y el público. 
+
+El segundo paso fue la programación del personaje para que responda mis movimientos y pueda ser usado en el festival artimañas. Primero se comenzó a separar por capas cada cada parte donde pudiera haber movimiento. Como ojos, boca, las orejas, el cuerpo y la cabeza. En el video por ejemplo se ve la separación por capa de la boca, el fondo, los dientes superior e inferior, la lengua y los labios.
+
+Después vino la programación, utilice LIVE2D un programa japonés enfocado en este mercado, lo que me permitió dirigir y hacer los movimientos de cada parte del cuerpo que había separado. Pude programar animaciones automáticas, como la respiración o darle físicas en aquellas partes del cuerpo que tengan peso, como la cadena del monóculo, las orejas y el pelo. Esto es para que el personaje tenga mayor fluidez cuando se mueva y pueda captar mejor los movimientos de la otra persona.
+
+Para capturar los movimientos se uso otro programa del mercado llamado VTUBE studio, que a través de una webcam se encarga de traducir los parámetros del programa anterior y hacer que el avatar haga los mismos movimientos que la persona detrás de la cámara. El  video fue una prueba de DOLL Ahi se ve como va copiando cada movimiento que estaba haciendo.
+
+Ahora el último paso sería poner a DOLL frente al espectador, para esto primero utilice un programa de transmisión para proyectar en otra pantalla una escena donde estaba DOLL y un fondo temático acorde a él con un telón animado para dar inicio o final durante la muestra. 
+
+La idea en sí se basó en presentar a DOLL al público y que él a través de un juego de trivia con preguntas logre que el espectador se quede e interactúe con el. Obviamente durante la trivia se ofrecía una recompensa por participar, esto fue para incitar al público a participar.
+ 
+Mientras tanto, detrás de escena me encontraba yo misma dándole vida al personaje, era la voz que hablaba con el público y llevaba a cabo una interacción indirecta con él. También se tuvo la ayuda de una persona fuera de la pantalla quien ayudó a organizar un poco al público presente y era quien daba los premios.
+
+Ya en lo último durante el festival fue DOLL fue bien recibido entre la gente y atrajo más personas de lo que imaginaba, el diseño fue agradable, la gente no tenía miedo de hablar con el avatar y algunos se sorprendían al ver que el títere les hablaba directamente o se tomaba fotos con el.
