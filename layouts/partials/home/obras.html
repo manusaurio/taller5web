@@ -28,22 +28,23 @@
 
         <div class="home-lista-obras__card-fondo" >
           <div class="parte-ilustrada">
+            {{- $nombreDeObra := .Title -}}
             {{- with default (.Resources.GetMatch "encabezado-main.*") (.Resources.GetMatch "obra-thumbnail.*") -}}
-            <img class="parte-ilustrada-original" src="{{ (.Fill "220x386").RelPermalink }}">
+            <img class="parte-ilustrada-original" src="{{ (.Fill "220x386").RelPermalink }}" alt="Fotografía de {{ $nombreDeObra }}">
             {{- end -}}
-            <img class="parte-ilustrada-trama" src="{{ relURL "imgs/obra-card-trama.webp" }}">
+            <img class="parte-ilustrada-trama" src="{{ relURL "imgs/obra-card-trama.webp" }}" alt="">
 
             <div class="parte-ilustrada-overlay"></div>
           </div>
 
-          <img class="ilustración-cubierta" src="{{ relURL "imgs/obra-card-cubierta.webp" }}" width="100%" height="100%">
+          <img class="ilustración-cubierta" src="{{ relURL "imgs/obra-card-cubierta.webp" }}" width="100%" height="100%" alt="">
 
-          <img class="ilustración-logo" src="{{ relURL "imgs/artimañas-logo-a.webp" }}">
+          <img class="ilustración-logo" src="{{ relURL "imgs/artimañas-logo-a.webp" }}" alt="">
         </div>
 
         <div class="home-lista-obras__card-texto">
           <div class="home-lista-obras__card-texto__crédito">
-            <h5>"{{ .Title }}"</h5>
+            <h3>"{{ .Title }}"</h3>
             <span>por {{ .Params.artist }}</span>
           </div>
 
@@ -60,8 +61,8 @@
     {{ end }}
   </div>
 
-  <button id="obras-nav-retroceder" class="obras-nav-botón"><img src="{{ relURL "imgs/icono-flecha.svg" }}"></button>
-  <button id="obras-nav-avanzar" class="obras-nav-botón"><img src="{{ relURL "imgs/icono-flecha.svg" }}"></button>
+  <button id="obras-nav-retroceder" class="obras-nav-botón" aria-label="Retroceder"><img src="{{ relURL "imgs/icono-flecha.svg" }}" alt=""></button>
+  <button id="obras-nav-avanzar" class="obras-nav-botón" aria-label="Avanzar"><img src="{{ relURL "imgs/icono-flecha.svg" }}" alt=""></button>
 </div>
 
 <script>
