@@ -112,6 +112,7 @@ $móvil: 720px;
 
   .home-lista-obras__card {
     scroll-snap-align: start end;
+    scroll-snap-stop: always;
     display: flex;
     color: white;
     width: var(--lista-obras-card-alto-y-ancho);
@@ -195,7 +196,7 @@ $móvil: 720px;
         padding: 10px;
       }
 
-      h5 {
+      h3 {
         font-size: 30px;
         font-family: 'Hit me punk';
       }
