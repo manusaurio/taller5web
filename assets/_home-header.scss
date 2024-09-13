@@ -13,8 +13,8 @@
     font-family: 'DCC Ash';
     padding-top: 50px;
     column-gap: 20px;
-    color: white;    
-  }
+    color: white;
+}
 
 .barra-de-navegación ul {
     display: flex;
@@ -28,12 +28,13 @@
 
     a {
         transition: color ease 0.1s;
-        
+
         &:hover {
             color: var(--color-acento);
         }
     }
 }
+
 .contenedor{
     position: relative;
     display: flex;
@@ -42,6 +43,7 @@
     width: 100%;
     min-height: 550px;
 }
+
 .encabezado{
     display: flex;
     justify-content: center;

@@ -25,34 +25,35 @@
     {{ range where .Site.RegularPages.ByDate "Type" "obra" }}
     <div class="home-lista-obras__card{{ range .Params.categories }} obra-cat-{{ anchorize . }}{{ end }}">
       <a href="{{ .RelPermalink }}">
+        <div class="home-lista-obras__card-contenido">
+          <div class="home-lista-obras__card-fondo" >
+            <div class="parte-ilustrada">
+              {{- $nombreDeObra := .Title -}}
+              {{- with default (.Resources.GetMatch "encabezado-main.*") (.Resources.GetMatch "obra-thumbnail.*") -}}
+              <img class="parte-ilustrada-original" src="{{ (.Fill "220x386").RelPermalink }}" alt="Fotografía de {{ $nombreDeObra }}">
+              {{- end -}}
+              <img class="parte-ilustrada-trama" src="{{ relURL "imgs/obra-card-trama.webp" }}" alt="">
 
-        <div class="home-lista-obras__card-fondo" >
-          <div class="parte-ilustrada">
-            {{- $nombreDeObra := .Title -}}
-            {{- with default (.Resources.GetMatch "encabezado-main.*") (.Resources.GetMatch "obra-thumbnail.*") -}}
-            <img class="parte-ilustrada-original" src="{{ (.Fill "220x386").RelPermalink }}" alt="Fotografía de {{ $nombreDeObra }}">
-            {{- end -}}
-            <img class="parte-ilustrada-trama" src="{{ relURL "imgs/obra-card-trama.webp" }}" alt="">
+              <div class="parte-ilustrada-overlay"></div>
+            </div>
 
-            <div class="parte-ilustrada-overlay"></div>
+            <img class="ilustración-cubierta" src="{{ relURL "imgs/obra-card-cubierta.webp" }}" width="100%" height="100%" alt="">
+
+            <img class="ilustración-logo" src="{{ relURL "imgs/artimañas-logo-a.webp" }}" alt="">
           </div>
 
-          <img class="ilustración-cubierta" src="{{ relURL "imgs/obra-card-cubierta.webp" }}" width="100%" height="100%" alt="">
+          <div class="home-lista-obras__card-texto">
+            <div class="home-lista-obras__card-texto__crédito">
+              <h3>"{{ .Title }}"</h3>
+              <span>por {{ .Params.artist }}</span>
+            </div>
 
-          <img class="ilustración-logo" src="{{ relURL "imgs/artimañas-logo-a.webp" }}" alt="">
-        </div>
-
-        <div class="home-lista-obras__card-texto">
-          <div class="home-lista-obras__card-texto__crédito">
-            <h3>"{{ .Title }}"</h3>
-            <span>por {{ .Params.artist }}</span>
-          </div>
-
-          <div class="home-lista-obras__card-texto__fecha-lugar">
-            <div>2/12</div>
-            <div>
-              <span>Facultad de artes</span>
-              <span>Sede fonseca</span>
+            <div class="home-lista-obras__card-texto__fecha-lugar">
+              <div>2/12</div>
+              <div>
+                <span>Facultad de artes</span>
+                <span>Sede fonseca</span>
+              </div>
             </div>
           </div>
         </div>

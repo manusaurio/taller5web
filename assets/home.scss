@@ -2,6 +2,8 @@
 
 $móvil: 720px;
 
+@import '_home-header.scss';
+
 @font-face {
   font-family: 'Hit me punk';
   src: url('hitmepunk.ttf') format('truetype');
@@ -113,10 +115,14 @@ $móvil: 720px;
   .home-lista-obras__card {
     scroll-snap-align: start end;
     scroll-snap-stop: always;
-    display: flex;
-    color: white;
     width: var(--lista-obras-card-alto-y-ancho);
-    aspect-ratio: 1/1;
+
+    &-contenido {
+      position: relative;
+      display: flex;
+      color: white;
+      aspect-ratio: 1/1;
+    }
 
     @keyframes moverDesdeArriba {
       0% {
@@ -138,15 +144,8 @@ $móvil: 720px;
       width: 100vw;
       scroll-snap-align: center;
     }
-  }
 
-  a {
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-
-    .home-lista-obras__card-texto {
+    &-texto {
       position: absolute;
       display: flex;
       flex-direction: column;
@@ -155,6 +154,7 @@ $móvil: 720px;
       justify-content: flex-end;
       height: 100%;
       width: 59%;
+      right: 0;
 
       &__fecha-lugar {
         display: flex;
@@ -201,59 +201,59 @@ $móvil: 720px;
         font-family: 'Hit me punk';
       }
     }
-  }
 
-  a .home-lista-obras__card-fondo {
-    position: relative;
-    height: 100%;
-    width: 100%;
-
-    .ilustración-cubierta {
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-
-    .ilustración-logo {
-      position: absolute;
-      left: 4%;
-      top: 1.5%;
-      width: 20.5%;
-      transform: rotate(-3deg);
-    }
-
-    .parte-ilustrada {
+    &-fondo {
       position: relative;
       height: 100%;
-      width: 50%;
-      overflow: hidden;
+      width: 100%;
 
-      img {
-        height: 100%;
-        width: 100%;
-      }
-
-      &-original {
-        display: block;
-        filter:  grayscale(1);
-        object-fit: cover;
-      }
-
-      &-trama {
-        top: 0;
-        left: 0;
+      .ilustración-cubierta {
         position: absolute;
-        mix-blend-mode: overlay;
+        left: 0;
+        top: 0;
       }
 
-      &-overlay {
+      .ilustración-logo {
         position: absolute;
-        top: 0;
-        left: 0;
+        left: 4%;
+        top: 1.5%;
+        width: 20.5%;
+        transform: rotate(-3deg);
+      }
+
+      .parte-ilustrada {
+        position: relative;
         height: 100%;
-        width: 100%;
-        background-image: linear-gradient(to bottom, rgba(244, 43, 174, 1.0), rgba(244, 43, 174, 0.4) 115%);
-        mix-blend-mode: darken;
+        width: 50%;
+        overflow: hidden;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+
+        &-original {
+          display: block;
+          filter:  grayscale(1);
+          object-fit: cover;
+        }
+
+        &-trama {
+          top: 0;
+          left: 0;
+          position: absolute;
+          mix-blend-mode: overlay;
+        }
+
+        &-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-image: linear-gradient(to bottom, rgba(244, 43, 174, 1.0), rgba(244, 43, 174, 0.4) 115%);
+          mix-blend-mode: darken;
+        }
       }
     }
   }
