@@ -116,12 +116,23 @@ $móvil: 720px;
     scroll-snap-align: start end;
     scroll-snap-stop: always;
     width: var(--lista-obras-card-alto-y-ancho);
+    aspect-ratio: 1/1;
+    color: white;
+
+    > a {
+      aspect-ratio: inherit
+    }
 
     &-contenido {
+      > img {
+        width: 100%;
+        height: 100%;
+      }
+
+      justify-content: flex-end;
       position: relative;
       display: flex;
-      color: white;
-      aspect-ratio: 1/1;
+      aspect-ratio: inherit;
     }
 
     @keyframes moverDesdeArriba {
@@ -148,18 +159,38 @@ $móvil: 720px;
     &-texto {
       position: absolute;
       display: flex;
-      flex-direction: column;
-      z-index: 7;
-      text-align: end;
       justify-content: flex-end;
-      height: 100%;
       width: 59%;
-      right: 0;
+      height: 100%;
+      text-align: end;
+      z-index: 7;
+      flex-direction: column;
+      box-sizing: border-box;
+      
+      > * {
+        padding: 10px;
+      }
+
+      &__crédito {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+
+        > h3 {
+          font-size: 30px;
+          font-family: 'Hit me punk';
+        }
+
+        > span {
+          font-size: 12px;
+        }
+      }
 
       &__fecha-lugar {
-        display: flex;
+        display: flex;        
         justify-content: flex-end;
-        font-size: 19px;;
+        font-size: 19px;
         column-gap: 7px;
 
         /* fecha */
@@ -178,81 +209,6 @@ $móvil: 720px;
           justify-content: center;
           text-align: start;
           font-size: 0.4em;
-        }
-      }
-
-      &__crédito {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 0;
-
-        > span {
-          font-size: 12px;
-        }
-      }
-
-      > * {
-        padding: 10px;
-      }
-
-      h3 {
-        font-size: 30px;
-        font-family: 'Hit me punk';
-      }
-    }
-
-    &-fondo {
-      position: relative;
-      height: 100%;
-      width: 100%;
-
-      .ilustración-cubierta {
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
-
-      .ilustración-logo {
-        position: absolute;
-        left: 4%;
-        top: 1.5%;
-        width: 20.5%;
-        transform: rotate(-3deg);
-      }
-
-      .parte-ilustrada {
-        position: relative;
-        height: 100%;
-        width: 50%;
-        overflow: hidden;
-
-        img {
-          height: 100%;
-          width: 100%;
-        }
-
-        &-original {
-          display: block;
-          filter:  grayscale(1);
-          object-fit: cover;
-        }
-
-        &-trama {
-          top: 0;
-          left: 0;
-          position: absolute;
-          mix-blend-mode: overlay;
-        }
-
-        &-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          background-image: linear-gradient(to bottom, rgba(244, 43, 174, 1.0), rgba(244, 43, 174, 0.4) 115%);
-          mix-blend-mode: darken;
         }
       }
     }
