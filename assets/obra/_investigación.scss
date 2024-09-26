@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+.obra-investigacion {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: stretch;
+  width: 100%;
+  max-width: 1322px;
+  padding-top: var(--min-padding);
+  padding-left: var(--min-padding);
+  padding-right: var(--min-padding);
+  box-sizing: border-box;
+  margin: 0 auto;
+  gap: var(--obra-gap);
+  text-align: justify;
+
+  > p {
+    margin-top: calc(var(--obra-gap) * -1);
+  }
+
+  h3 {
+    font-size: 2.8em;
+    text-transform: uppercase;
+    padding-bottom: .5rem;
+    letter-spacing: 0.2rem;
+  }
+
+  & &-video {
+    aspect-ratio: 16 / 9;
+  }
+
+  & &-bloque {
+    display: flex;
+    column-gap: var(--obra-bloque-gap);
+
+    > img {
+      min-width: calc(50% - var(--obra-bloque-gap) / 2);
+      object-fit: contain;
+      align-self: flex-start;
+    }
+
+    &-texto {
+      padding-top: 16px;
+
+      p:not(:last-of-type) {
+        margin-bottom: var(--obra-gap);
+      }
+    }
+  }
+}
+
+.obra-investigacion-bloque:nth-of-type(2n) {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 720px) {
+  .obra-investigacion {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+
+    & &-bloque,
+    & &-bloque:nth-of-type(2n) {
+      flex-direction: column;
+    }
+  }
+}
+
+.investigación {
+  width: 100%;
+  background-image: url('imgs/fondo-investigación.webp');
+  /* se asume que la imagen tiene 1/4 de ancho que el del divisor */
+  background-size: 25%;
+  color: white;
+  padding-top: 100px;
+  padding-bottom: 150px;
+
+  & &-contenido {
+    padding-left: calc(var(--min-padding) * 4);
+    padding-right: calc(var(--min-padding) * 4);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em 60px;
+    justify-content: center;
+    max-width: 1600px;
+    margin: 0 auto;
+
+    @media (max-width: 1000px) {
+      & {
+        flex-flow: column;
+
+        > img {
+          min-width: 100%;
+        }
+      }
+    }
+
+    @media (max-width: 1322px) {
+      /* 1322 -> ancho de .obra-investigacion */
+      & {
+        padding-left: var(--min-padding);
+        padding-right: var(--min-padding);
+        gap: 1em 30px;
+
+        h3 {
+          word-break: break-all;
+        }
+      }
+    }
+
+    > img {
+      flex: 1;
+      display: block;
+      align-self: flex-start;
+      max-width: 100%;
+    }
+
+    .investigación-texto {
+      flex: 1;
+      text-align: justify;
+      align-self: center;
+      min-width: 300px;
+
+      @media (max-width: 600px) {
+        min-width: initial;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        padding-bottom: 5px;
+      }
+
+      p:not(:last-child) {
+        padding-bottom: 1em;
+      }
+
+      > .button-wrapper {
+        margin-top: 10px;
+      }
+    }
+  }
+}
