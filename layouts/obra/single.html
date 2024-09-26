@@ -8,7 +8,7 @@
 {{ with .Resources.GetMatch "encabezado-main.*" }}
 <meta property="og:image" content="{{ (.Resize "400x Linear").Permalink }}"/>
 {{ end }}
-{{- $obraCSS := resources.Get "obra.css" | toCSS | minify | fingerprint -}}
+{{- $obraCSS := resources.Get "obra.scss" | toCSS | minify | fingerprint -}}
 <link rel="stylesheet" href="{{ $obraCSS.RelPermalink }}">
 {{ end }}
 {{ define "body" }}
