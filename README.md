@@ -2,6 +2,9 @@
 **Artimañas** es una muestra de trabajos finales de Taller Multimedial V para la Licencitura en Diseño Multimedial de la Universidad Nacional de La Plata (UNLP). Acá se encuentra el código de sitio web para el año 2023.
 
 ## Instrucciones de build
+> [!WARNING]  
+> El sistema de plantillas de Hugo 0.146.0 recibió cambios que son incompatibles con sus versiones viejas. No se ha verificado si ese es el caso en este proyecto: el último build realizado con éxito fue con Hugo 0.134.3.
+
 El proyecto está hecho con la versión extendida de [hugo](https://github.com/gohugoio/hugo).
 
 Para generar el sitio y volcarlo en el directorio _public_ sólo se necesita ejecutar `hugo` en la raíz del proyecto. Es importante prestar atención al valor de `baseURL` especificado en [`hugo.yaml`](hugo.yaml) o por el parámetro `--baseURL`:
